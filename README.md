@@ -32,7 +32,7 @@ Click on [Getting started with Spec Driven Development](/workshop/02-getting-sta
 
 ---
 
-### 3 - Greenfield - Building new applications with SDD (40 - 60 min)
+### 3 - Greenfield - Building new applications with Spec Driven Development (40 - 60 min)
 
 We will now apply this knowledge and show you can build an application from scratch with specification driven development. We will go through the entire lifecycle to create a complete working application. Once we have it up and running, we will go through the spec driven lifecycle and show how to add new features, as well as how updating existing specifications work.
 
@@ -40,7 +40,7 @@ Click on [Building a new application with spec driven development](/workshop/03-
 
 ---
 
-### 4 - Brownfield - Applying SDD with existing code bases (40-60 min)
+### 4 - Brownfield - Applying Spec Driven Development with existing code bases (40-60 min)
 
 In this lab we will explore how this is different from greenfield use cases and show you techniques to help you get started with your existing code and projects. You will take an existing project in GitHub, and show how you can apply SDD to understand and document the application architecture, maintain the code, and add new features.
 
