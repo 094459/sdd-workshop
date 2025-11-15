@@ -36,11 +36,15 @@ Click on [Getting started with Spec Driven Development](/workshop/02-getting-sta
 
 We will now apply this knowledge and show you can build an application from scratch with specification driven development. We will go through the entire lifecycle to create a complete working application. Once we have it up and running, we will go through the spec driven lifecycle and show how to add new features, as well as how updating existing specifications work.
 
+Click on [Building a new application with spec driven development](/workshop/03-greenfield.md) to work through a series of hands on lab as you build your first application with Kiro and spec driven development.
+
 ---
 
 ### 4 - Brownfield - Applying SDD with existing code bases (40-60 min)
 
 In this lab we will explore how this is different from greenfield use cases and show you techniques to help you get started with your existing code and projects. You will take an existing project in GitHub, and show how you can apply SDD to understand and document the application architecture, maintain the code, and add new features.
+
+Click on [Using spec driven development with existing applications](/workshop/04-brownfield.md) to see how you can use Kiro and spec driven development in your existing projects.
 
 ---
 
@@ -48,6 +52,8 @@ In this lab we will explore how this is different from greenfield use cases and 
 
 During this hands on tutorial we used a new developer tool called [Kiro](https://kiro.dev) that provides native support for specification driven development. In this section we will dive through some of the key features to help you get the most out of this tool. We will cover the core features and how they work, as well as look at configuration options and and share tips that you can use straight away.
 
+Click on [Tools and Resources](/workshop/05-tools-and-resources.md) to dive deeper into some of Kiro's features and look at additional resources to help you do more.
+ 
 ---
 
 ## Feedback
