@@ -402,6 +402,8 @@ This will take around 20 minutes to complete, so feel free to grab some refreshm
 
 In previous labs we showed how you can use the chat interface to change (add) the requirements.md and we are now going to do the same thing to add a task to the implementation plan file, tasks.md.
 
+> Note! It is probably best to have added this to our requirements document, but in this lab we want to show you that you can also work and amend the implementation plan as needed.
+
 In the previous lab we Kiro generated code from our specs. How do we now test our application? Kiro may (or may not) have created a README based on the tasks defined in your tasks.md. In most cases it does not create this so we are going to use the chat interface to add a new task to our task list.
 
 #### Lab-08
