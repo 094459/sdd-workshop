@@ -1,6 +1,6 @@
 ![Header - picture of Kiro ghost and title](/images/header.png)
 
-# Creating new applications with spec driven development (SDD)
+# Creating new applications with spec driven development
 
 In this lab we are going to apply everything we have learned in the previous sections, and use spec driven development to build a simple web application. We are going to start fresh with a new directory and build up from the ground up to walk you through the workflow. The goal of this lab is to:
 
@@ -28,7 +28,7 @@ In this lab we are going to set our project up with everything we need.
 mkdir ~/kiro/workshop-greenfield && cd workshop-greenfield
 ```
 
-2. Initialise git - we are going to use git to track all specification and code changes within our project - this will allow us to track and revert to a given state as we need.
+2. Initialize git - we are going to use git to track all specification and code changes within our project - this will allow us to track and revert to a given state as we need.
 
 ```
 git init
@@ -46,7 +46,7 @@ With Kiro launched we are ready for the next lab.
 
 ![Lab](/images/lab-header.png)
 
-In this lab we are going to define some steering documents we want Kiro to use as it starts architecting and designing solutions against our requirements. We are going to implement two kinds of steering documents so you can see how to configure them. We will create a globally scoped steering document that an organisation might typically use to control certain aspects of projects across your organisation. Then we will create one that perhaps a developer might want to implement as their own preferences.
+In this lab we are going to define some steering documents we want Kiro to use as it starts to architect and design solutions against our requirements. We are going to implement two kinds of steering documents so you can see how to configure them. We will create a globally scoped steering document that an organization might typically use to control certain aspects of projects across your organization. Then we will create one that perhaps a developer might want to implement as their own preferences.
 
 #### Lab-02
 
@@ -125,14 +125,14 @@ Save the file and you should now have your steering file setup. What have we don
 
 5. From Kiro's IDE, bring up the command palette (on a Mac this is SHIFT + COMMAND + P, and Windows it is CTRL + SHIFT + P) and from the dialog box type "Kiro" and then select "Kiro: Docs force re-index" option.
 
-![reindexing steering docs in Kiro](/images/kiro-reindex-docs.png)
+![re-indexing steering docs in Kiro](/images/kiro-reindex-docs.png)
 
 6. In the Kiro IDE, click on the "+" at the top to open a new session, select Vibe. In the chat interface click on the # and select "Steering" which should bring up the steering file you created. Select this, and you should see it appear in a highlighted block in the chat interface.
 
 Now enter the following in the chat window. 
 
 ```
-Show (dont create) me some code that implements a simple API that returns a json date object
+Show (don't create) me some code that implements a simple API that returns a json date object
 ```
 
 Review the output - you should see that it has respected the preferences we have just defined.
@@ -143,7 +143,7 @@ Review the output - you should see that it has respected the preferences we have
 
 ![Lab](/images/lab-header.png)
 
-We are going to add a number of MCP Servers which we will be using throughout this workshop. We are going to be using the AWS Docs Knowledgebase MCP Server to provide us with the latest AWS docs, the AWS Pricing MCP Server to provide us with Pricing information, and the AWS Terraform MCP Server which we will use to create IaC to deploy our application onto AWS.
+We are going to add a number of MCP Servers to show you how you can configure these. We are going to be using the AWS Docs Knowledgebase MCP Server to provide us with the latest AWS docs, and the AWS Pricing MCP Server to provide us with Pricing information.
 
 #### Lab-03
 
@@ -225,7 +225,7 @@ First of all try via the chat interface and enter the following:
 
 Review the output and check the requirements.md file. It should now have a new requirement. Does it look ok? Once you have looked at this delete this new requirement - don't worry, we are going to add it again, but this time by directly editing the document.
 
-4. You can directly update the requirement.md if you prefer. Edit your requirements.md file and append the following new requirement to the end, making sure to change the number "6" below so that its the next in sequenece.
+4. You can directly update the requirement.md if you prefer. Edit your requirements.md file and append the following new requirement to the end, making sure to change the number "6" below so that its the next in sequence.
 
 ```
 ### Requirement 6
@@ -271,7 +271,7 @@ Kiro will now use the steering documents we created initially, together with the
 
 2. If the design.md document is not already loaded into the main editor window, click on the Kiro icon on the activity bar, select your spec in the top left and this should allow you to navigate to the design document.
 
-![Navigating to the deisng document](/images/kiro-design.png)
+![Navigating to the design document](/images/kiro-design.png)
 
 Alternatively you can switch to the file explorer, and you will see that you now have a new document in the spec directory that you explored in a previous lab. 
 
@@ -285,7 +285,7 @@ Click on this to expand the editor so that its full screen.
 
 4. Go through the design document and review the design. Check for the following:
 
-- Did it respect the steering document we created in a previos lab?
+- Did it respect the steering document we created in a previous lab?
 - Did the structure look like the layout we defined in the steering doc?
 - Does the data model look reasonable? Data models are an important context anchor, so it is always worth checking and double checking that the data model looks good
 - Review the routes/APIs that are created - do they map to our requirements?
@@ -318,15 +318,15 @@ Click on the "Keep optional tasks (faster MVP)" button.
 - Find the tasks that have been marked as optional - these are greyed out, and easily identifiable as they have an "*" before the task number
 - Review the high level task activity, and the order in which they are sequenced
 - Look at the linked requirements and check back to the requirements.md file to make sure they align
-- Notice that abov each task we have a "Start task" link - don't click on these yet.
+- Notice that above each task we have a "Start task" link - don't click on these yet.
 
 3. From the source control icon in the activity bar, we are going to check in our changes. In the changes window enter "spec-workflow-completed" and click on the commit button. After you confirm, it should look something like this.
 
-![commiting spec to source control](/images/kiro-spec-commit-source.png)
+![committing spec to source control](/images/kiro-spec-commit-source.png)
 
-Using source control to version our Kiro project allows us to revert back and maintain state between our spec and any other artefacts created. This is our baseline, the start of the project before we have created any code.
+Using source control to version our Kiro project allows us to revert back and maintain state between our spec and any other artifacts created. This is our baseline, the start of the project before we have created any code.
 
-> You should use your own preferred way of managing artefacts if you have them - the above example is a simplified approach just for the purpose of this workshop
+> You should use your own preferred way of managing artifacts if you have them - the above example is a simplified approach just for the purpose of this workshop
 
 4. We are now ready to get Kiro to start generating some code from our spec. From the task.md, go to the very first task, and click on the "Start Task" icon. You should see the task.md update in the main editor change, and you should see the task change like the following:
 
@@ -342,7 +342,7 @@ We have four options when Kiro asks us that it needs to do something:
 
 - Edit the command -we can use the editor to make changes, which can be useful if we see that Kiro has made a mistake in the command
 - Reject - we can block Kiro from running this command
-- Trust command and Accept - we can add this command to Kiro's trusted commands (see more of this in the [Kiro Tools Reference sectin](/workshop/05-tools-and-resources.md))
+- Trust command and Accept - we can add this command to Kiro's trusted commands (see more of this in the [Kiro Tools Reference section](/workshop/05-tools-and-resources.md))
 - Accept command - allow Kiro to run the command
 
 During this lab we are going to click on the "Accept command". So as it appears, click on that icon. You should now see the command run, and the output proceed in the chat interface.
@@ -354,7 +354,7 @@ During this lab we are going to click on the "Accept command". So as it appears,
 7. You should notice that for any completed task:
 
 - All items under the task should show as completed, with the task box changing from [ ] to [x]
-- You will see a "View Changes" link next to the Task Completed text - this will allow you to view a summarised diff of code changes made
+- You will see a "View Changes" link next to the Task Completed text - this will allow you to view a summarized diff of code changes made
 - You will see a "View Execution" link which will take you to the start of the chat history where a given task started, allow you to review the commands that were run and the output
 
 8. Click on the source control icon in the activity bar - you should see a list of all changes made. This will include code but also changes to your spec files.
@@ -373,7 +373,7 @@ You should see Kiro begin the next task. You will follow the same process as for
 - When prompted, help Kiro to review and act
 - Review the task summary
 
-When finsished, repeat the step and add a new commit in source control, naming the commit message after each task.
+When finished, repeat the step and add a new commit in source control, naming the commit message after each task.
 
 10. We can also use the chat interface to complete a number of tasks if we think there are a number of related tasks that can be executed together. We do this from the chat interface.
 
@@ -549,7 +549,7 @@ Review the output in the chat interface. You should notice the following text ap
 
 Kiro will review existing specs you have created. In our case, it is going to create a new spec. However, if Kiro thinks that what you are asking for might be better as a new requirement to an existing spec, it will inform you and start that process (which we have done in previous labs)
 
-4. After a few moments, we should now see a new requirements.md appear in the main editor. If you look at the left hand side in the Spec section, you will also see that we have a new spec listed (csv-export or something similar). If you switch to the file explorer, you will see that under the .kiro directory, under sepcs you now have a new directory that has been created for this new spec.
+4. After a few moments, we should now see a new requirements.md appear in the main editor. If you look at the left hand side in the Spec section, you will also see that we have a new spec listed (csv-export or something similar). If you switch to the file explorer, you will see that under the .kiro directory, under specs you now have a new directory that has been created for this new spec.
 
 5. Switch back to the Kiro view, and now work through the three steps of the workflow to complete this new spec. This will take around 5-10 minutes. As you do this, look for the following:
 

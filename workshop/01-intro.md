@@ -2,7 +2,7 @@
 
 # How did we get here? The evolution that led to specification driven development
 
-In this short section we will take a look at how AI coding assistants have been evolving over the past few years, leading to the next generatio of tools that are supporing spec driven development (SDD). It will explore the problems that SDD is solving, and also address some common questions that I hear come up as developers wrap their heads around this new approach.
+In this short section we will take a look at how AI coding assistants have been evolving over the past few years, leading to the next generation of tools that are supporting "Spec Driven Development" (SDD). It will explore the problems that spec driven development is solving, and also address some common questions that I hear come up as developers wrap their heads around this new approach.
 
 ## Evolution of AI Coding Assistants
 
@@ -10,17 +10,17 @@ In this short section we will take a look at how AI coding assistants have been 
 
 Over the past 2-3 years, we have seen AI Coding Assistants rapidly innovate and take advantage of improvements in large language models. From simple tab completion and code blocks, to writing larger pieces of code, and then onto the more recent agentic workflows where they are able to iterate and complete entire code bases.
 
-Developers using these tools have identified a number of use cases where this approach shines: experimentation and rapid prototyping, one shot automation, and helping them to learning. We saw the emergece of "Vibe Coding" to describe how developers would let "AI off its leash" to create code with little oversight and control.
+Developers using these tools have identified a number of use cases where this approach shines: experimentation and rapid prototyping, one shot automation, and helping them to learning. We saw the emergence of "Vibe Coding" to describe how developers would let "AI off its leash" to create code with little oversight and control.
 
 > **Characteristics of Vibe Coding**
 >
 > * Rapid and conversational - CHat Orientated Programming (CHOP)
 > * Iterative, back and forth
-> * Emphemeral in nature, once your session was over, it was gone
+> * Ephemeral in nature, once your session was over, it was gone
 > * Point in time prompts that you needed to manage
 > * Context was transient and point in time
 
-Many saw the potential, but had questions or concerns: these approaches worked for small scale tasks but tended to struggle working with larger codebases and could not scale, the lack of control and reproducbility was a concern, and there were fears of quality of the generated code. This led to a whole new category of job description - Vibe Coding Cleanup Specialist!
+Many saw the potential, but had questions or concerns: these approaches worked for small scale tasks but tended to struggle working with larger codebases and could not scale, the lack of control and reproducibility was a concern, and there were fears of quality of the generated code. This led to a whole new category of job description - Vibe Coding Cleanup Specialist!
 
 ---
 
@@ -29,10 +29,10 @@ Many saw the potential, but had questions or concerns: these approaches worked f
 Developers quickly found out and shared good practices, and were able to make AI coding assistants work more effectively. The three key areas of these were around breaking down problems into smaller tasks, being more precise and accurate in what you are asking, and the importance of context.
 
 * Breaking down large problems - developers quickly learned that AI coding assistants worked more effectively when tackling discrete tasks, and that the key was to take a problem and decompose this into the right chunks to work with.
-* Specificity and Clarity - prompt engineeering became a thing, and developers quickly took this and developed good practices around how to craft prompts for software engineering tasks - the level of detail required, the use of examples, meta prompting, and the importance of iterating and refing your prompt
+* Specificity and Clarity - prompt engineering became a thing, and developers quickly took this and developed good practices around how to craft prompts for software engineering tasks - the level of detail required, the use of examples, meta prompting, and the importance of iterating and refining your prompt
 * Context, context, context - was probably the most important part that developers discovered affected the quality of the outputs of AI coding assistants, and so was born context engineering
 
-Developers began to share their experiences and best practices. Calm coding, the art of taking a step back and being more intentional was a common pattern that emerged. This pattern helped shape better context and prompts, and produce more focused output.Developers began to produce tools to help simplify these leranings - whether it was tools to break down problems into smaller tasks, or opinionated tools that guided you through specific workflows. 
+Developers began to share their experiences and best practices. Calm coding, the art of taking a step back and being more intentional was a common pattern that emerged. This pattern helped shape better context and prompts, and produce more focused output.Developers began to produce tools to help simplify these learnings - whether it was tools to break down problems into smaller tasks, or opinionated tools that guided you through specific workflows. 
 
 ---
 
@@ -42,15 +42,15 @@ Developers began to share their experiences and best practices. Calm coding, the
 
 Blog posts like [Chat is a bad UI pattern for development tools](https://danieldelaney.net/chat/) began to share thinking that the current CHOP approach needed to change, and started to explore what a more focused, intentional approach would look like.
 
-Developers were talking, practioners were sharing tools and prototypes, and key elements began to emerge:
+Developers were talking, practitioners were sharing tools and prototypes, and key elements began to emerge:
 
 * **Clarity Before Code** - Clarity of thought and purpose must precede implementation. By investing time in understanding requirements, designing solutions, and planning implementation, we reduce uncertainty, minimize rework, and increase the likelihood of building the right thing correctly.
 * **Iterative Refinement** - Design for iterative improvement. Rather than moving linearly from idea to implementation, the methodology encourages refinement and validation at each step. This approach catches issues early when they're less expensive to fix and ensures that each phase builds solidly on the previous one.
-* **Documentation as Communication** - move away from emphemeral prompts to tools that help you communicate and align stakeholders, preserve decision rationale, and provide context for future maintenance and enhancement. 
+* **Documentation as Communication** - move away from ephemeral prompts to tools that help you communicate and align stakeholders, preserve decision rationale, and provide context for future maintenance and enhancement. 
 
 Spec driven development is an approach that helps developers start with intent, and then move through collecting the right supporting context to generate technical designs and implementation details. It breaks down the implementation into discrete tasks that AI coding assistants can execute, supporting by just the right level of context.
 
-In July, [Kiro](https://kiro.dev) was launched, a new IDE that provided an opionated and native approach for supporting a new workflow when using AI coding assistants - spec driven development.
+In July, [Kiro](https://kiro.dev) was launched, a new IDE that provided an opinionated and native approach for supporting a new workflow when using AI coding assistants - spec driven development.
 
 When you create a "spec", this opinionated workflow will walk you through three phases: Requirements, Design, and then Tasks (Implementation).
 
@@ -75,7 +75,7 @@ Provides a roadmap for implementation, documents design decisions and their rati
 
 **Characteristics of SDD**
 
-This SDD approach provides developers with the good practices that have been emerging. It allows them to docus on upfront planning and intent. It helps to break down work into discrete tasks, whether that is new or existing work. It bakes in good context engineering practices as first class artefacts, using the idea of **Steering documents** that ground agentic outputs. And it helps create lineage between intent and code, that allows developers to have a stronger relationship and ownership of the code generated.
+This SDD approach provides developers with the good practices that have been emerging. It allows them to focus on upfront planning and intent. It helps to break down work into discrete tasks, whether that is new or existing work. It bakes in good context engineering practices as first class artifacts, using the idea of **Steering documents** that ground agentic outputs. And it helps create lineage between intent and code, that allows developers to have a stronger relationship and ownership of the code generated.
 
 The rest of this workshop is going to dive deeper into this workflow.
 
@@ -103,7 +103,7 @@ SDD is a new approach and so use cases are still emerging. You might not need or
 
 ---
 
-## Comparing SDD to...
+## Comparing Spec Driven Development (SDD) to...
 
 Depending on your software development experience, you may be reading this and thinking. This all sounds very familiar. There are some elements of SDD that overlap with other methodologies, so I want to share some thoughts on that in this section.
 
@@ -117,7 +117,7 @@ Depending on your software development experience, you may be reading this and t
 
 Similarities:
 
-* Both emphasise defining success criteria before implementation
+* Both emphasize defining success criteria before implementation
 * Both use an iterative red-green-refactor cycle (requirements-design-implementation)
 
 Key Differences:
@@ -141,11 +141,11 @@ Key Differences:
 * The methodology is optimized for feature-level development rather than entire projects
 * Greater emphasis on AI-assisted development and collaboration
 
-### Behaviour Driven Development (BDD)
+### Behavior Driven Development (BDD)
 
 Similarities:
 
-* Both prioritise design and planning before coding
+* Both prioritize design and planning before coding
 * Both create detailed technical specifications
 
 Key Differences:
@@ -159,7 +159,7 @@ Key Differences:
 
 Similarities:
 
-* Both prioritise design and planning before coding
+* Both prioritize design and planning before coding
 * SDD is designed for code generation through AI coding assistants, MDD generates codes through code gen tools
 
 Key Differences:
@@ -173,7 +173,7 @@ Key Differences:
 
 Before closing this section it is worth noting that SDD is similar in many ways to Prompt Driven Development (PDD) a framework that evolved to achieve many of the same objectives of SDD. PDD looked to move beyond vibe coding and provide a way that developers could use AI coding assistants to do more complex tasks.
 
-The key difference is that SDD pivots on well defined artefacts (for example, Requirements documents written in EARS format), wherease PDD can use more flexibly written documents markdown. PDD is driven through the AI coding assistant via the chat interface, whereas SDD is typically driven through a tool.
+The key difference is that SDD pivots on well defined artifacts (for example, Requirements documents written in EARS format), whereas PDD can use more flexibly written documents markdown. PDD is driven through the AI coding assistant via the chat interface, whereas SDD is typically driven through a tool.
 
 ---
 

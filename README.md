@@ -8,10 +8,10 @@ This workshop can either be run in a traditional workshop environment that is le
 
 ### What are you going to need?
 
-* [Kiro](https://kiro.dev/downloads) - you will need to install Kiro, a new IDE that has native support for spec driven development
+* [Kiro](https://kiro.dev/downloads) - you will need to install Kiro, a new IDE that has native support for spec driven development (available for Windows, MacOS, and Linux)
 * Python 3.10 (or later)
 * [Python uv](https://github.com/astral-sh/uv?tab=readme-ov-file#installation)
-
+* git
 
 ## What is going to be covered
 
@@ -48,7 +48,7 @@ Click on [Using spec driven development with existing applications](/workshop/04
 
 ---
 
-### 5 - Tools and Resources (30 mins)
+### 5 - Tools and Resources (10 mins)
 
 During this hands on tutorial we used a new developer tool called [Kiro](https://kiro.dev) that provides native support for specification driven development. In this section we will dive through some of the key features to help you get the most out of this tool. We will cover the core features and how they work, as well as look at configuration options and and share tips that you can use straight away.
 

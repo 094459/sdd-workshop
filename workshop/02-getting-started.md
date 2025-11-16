@@ -6,6 +6,15 @@ Spec driven development (SDD) is a systematic approach to software feature devel
 
 ![Three steps of SDD](/images/lifecycle-high-level.png)
 
+## Kiro
+
+We are going to be using Kiro throughout this workshop. Kiro provides an opinionated UI that walks you through the specs driven development workflow. 
+
+![Kiro overview](/images/kiro-overview.png)
+
+Kiro simplifies working with spec driven development by integrating into its user interface how to create a spec, and then walking you through the workflow: Creating detailed requirements, selecting the right technical design, and then building the implementation plan by breaking down what is needed into a series of tasks.
+
+
 ## What is a "spec"?
 
 Specs bridge the gap between conceptual product requirements and technical implementation details, ensuring alignment and reducing development iterations. But what exactly is the "spec" in spec driven development? A spec is a collection of resources that are used to implement a feature. 
@@ -13,8 +22,8 @@ Specs bridge the gap between conceptual product requirements and technical imple
 A spec has a number of characteristics:
 
 * they are structured, written documents (in markdown)
-* the structure is optimised for specific activities (requirements, design, or tasks)
-* they are organised together as a collection
+* the structure is optimized for specific activities (requirements, design, or tasks)
+* they are organized together as a collection
 
 A spec has a lifecycle: you create a spec (and work through the three phases of an iteration), and you can update a spec (iterating through the same three phases, or just the relevant ones to the change being made). This will make more sense later on when we start working through our first spec, so don't worry too much right now.
 
@@ -22,19 +31,19 @@ A spec has a lifecycle: you create a spec (and work through the three phases of 
 
 ## Creating a Spec
 
-Creating a spec starts with intent - what is it you are trying to do. 
+Creating a spec starts with intent - what are trying to do? 
 
-We use an initial prompt to bootstrap the spec and start the workflow. We will look at this in a moment, but before we do that it is worth noting that writing specs is about iterating and refining. It is not too important at this stage whether your spec is perfect or not, as you will be spending lots of time reviewing and editing them.
+We use an initial prompt to bootstrap the spec creation and start the workflow. You will see this in action later when you do the hands on labs. Working with specs about iterating and refining. It is not too important whether your spec is perfect when it is initially created as you will be spending lots of time reviewing and editing them.
 
-In this workshop we are going to be using Kiro. This provides an opionionated UI that walks you through creating specs by simply open up a new chat window, and selecing "Spec". Kiro will then walk us through the workflow: Creating detailed requirements, selecting the right technical design, and then building the implementation plan by breaking down what is needed into a series of tasks.
+Specs are a collection of markdown docs, which we will dive into during the hands on labs.
 
 ### How many specs
 
-For a given application, you can have multiple specs. Each spec is a feature you want to work on. 
+Each spec is a feature you want to work on - your intent. You can create multiple specs for any given project you are working on. 
 
 ![multiple specs](/images/multiple-specs.png)
 
-Throughout this workshop we will use the term spec in the singular. When you start to use spec driven development to build features for your applications, you should bear in mind that you might have many specs with each spec delivering that specific feature.
+Throughout this workshop we will use the term spec in the singular. When you start to use spec driven development to build features for your applications, you might work with many specs. Each spec delivers a specific feature.
 
 Before we dive into the workflow in more detail, we need to talk about Steering documents - what they are and why they are important.
 
@@ -44,17 +53,20 @@ Before we dive into the workflow in more detail, we need to talk about Steering 
 
 Providing the right context is key to getting the best out of AI coding assistants, and steering documents help provide context. steering documents provide persistent knowledge about your project through markdown files. Instead of explaining your conventions in every chat, steering files ensure your AI coding assistant consistently follows your established patterns, libraries, and standards.
 
-Steering documents and intent have a close relationship. The steering documents that you create will be aligned to the intent you have.
+**Steering documents and intent have a close relationship**. The steering documents that you create will be aligned to the intent you have.
 
 **Generating or adding steering files**
 
-From the Kiro tab, we can see the "Agent Steering" widget, where any steering documents are listed. From this widget we can generate or create new steering docs. When creating steering files, you will be able to specify whether the scope of the steering file is specific to just the workspace you are currently in (Workspace agent steering), or whether you want to create a globally scoped steering file that will apply across all your projects on your machine (Global agent steering). 
-
-These steering documents are stored in a specific location in your project workspace: ".kiro/steering" for workspace agent steering files, and "~/.kiro/steering" for global steering files. These foundation files are included in every interaction by default (where they have been created), forming the baseline of Kiro's project understanding.
+The "Agent Steering" panel from the Kiro activity bar is where any steering documents are listed. From here you can generate or create new steering docs. Steering documents are scoped at either a global (Global agent steering - they will appear in every project you use Kiro with) or project level (Workspace agent steering - the steering documents will appear in just this project). When creating steering files, you will be asked to specify what the scope of the steering file is. 
 
 ![steering file options in Kiro](/images/kiro-steering.png)
 
-How you create your steering documents will depend on whether you are working on an existing codebase or creating a new project. In the next sections we will look at this.
+These steering documents are stored in a specific location in your computer:
+
+* ".kiro/steering" for workspace agent steering files
+* "~/.kiro/steering" for global steering files. 
+
+How you create your steering documents will depend on whether you are working on an existing codebase (brownfield) or creating a new project (greenfield). In the next sections we will look at this.
 
 ---
 
@@ -66,11 +78,13 @@ When using Kiro with an existing codebase, you can use the "Generate Steering" b
 * Technology Stack (tech.md) - Documents your chosen frameworks, libraries, development tools, and technical constraints. When Kiro suggests implementations, it will prefer your established stack over alternatives.
 * Project Structure (structure.md) - Outlines file organization, naming conventions, import patterns, and architectural decisions. This ensures generated code fits seamlessly into your existing codebase.
 
-It is important that you review these three artefacts after they have been generated. Check that they are accurate and reflect the project you are working on. If there are key pieces of information missing, you can edit the files and make revisions. This is important because these documents will be used throughout the workflow steps.
+It is important that you review these three artifacts after they have been generated. Check that they are accurate and reflect the project you are working on. If there are key pieces of information missing, you can edit the files and make revisions. This is important because these documents will be used throughout the workflow steps.
 
-An important step to be aware of. If you do make edits and changes, make sure you ask Kiro to reload these files into its context window. If you fail to do this, it will retain the original versions in its "memory". The prompt I use is as follows (changing it based on which steering doc was updated):
+> **Note!** An important step to be aware of. If you do make edits and changes, make sure you ask Kiro to reload these files into its context window. If you fail to do this, it will retain the original versions in its "memory". The prompt I use is as follows (changing it based on which steering doc was updated):
+> 
+> "I have updated the steering document xx.md - please reload"
+>
 
-"I have updated the steering document xx.md - please reload"
 
 ---
 
@@ -126,7 +140,7 @@ It is tempting when thinking about what you want to include in your steering fil
 
 * Always use Generate when working with existing projects and then review/edit the output for accuracy. If things are missing, add them.
 * Start small and include just the core needs you want to influence
-* Use the different inclusion modes to help the AI coding assistant optimise which steering files to use and optimise your context window utilisation
+* Use the different inclusion modes to help the AI coding assistant optimize which steering files to use and optimize your context window utilization
 * Use clear and descriptive names when naming your steering files (e.g. api-rest-conventions.md - REST API standards)
 * Provide examples - use code snippets, example input/outputs, style and structure guides
 * Security first - make sure you do NOT include sensitive information in your steering docs. **Never include** API keys, passwords, or sensitive data
@@ -136,7 +150,7 @@ It is tempting when thinking about what you want to include in your steering fil
 
 ### Model Context Protocol (MCP)
 
-In addition to steering docs, Model Context Protocol (MCP) provides AI coding assistant with up to date or specialised context that will help it generate more specific outputs. This is done via configuring MCP Servers within your AI Coding assistant, which will then provide additional tools which the AI coding assistant can use to get that additional context. There are many hundreds (if not thousands) of MCP servers available to developers to help them with generalised or very specific tasks.
+In addition to steering docs, Model Context Protocol (MCP) provides AI coding assistant with up to date or specialized context that will help it generate more specific outputs. This is done via configuring MCP Servers within your AI Coding assistant, which will then provide additional tools which the AI coding assistant can use to get that additional context. There are many hundreds (if not thousands) of MCP servers available to developers to help them with generalized or very specific tasks.
 
 > **How does this work?** You AI coding assistant will make a judgement call based on the prompt which MCP servers it might want to use. You can force this by being specific in your prompt.
 
@@ -145,7 +159,7 @@ You have a couple of strategies open to you as you think about how you want to i
 * Configure MCP Servers within your AI coding assistant tool
 * Generate markdown steering docs from the output of running prompts against an MCP Server
 
-The key difference between the two approches is around how you manage what context is provided. MCP Servers can fill up the AI coding assistant context window, and its hard to see what is being included (you are kind of at the mercy of the MCP Server). Piping the output to a markdown file and then adding this as steering can be an optimisation technique. It will also allow you to review and edit what you provide - for many queries, you might actually only need a small portion of what the MCP Server might bring back. The other side however is that if the AI coding assistant needs information (context) that you did not include, you might get unexpected results. Depending on what you are doing, having the latest, up to date information might be important. These are things you need to think about.
+The key difference between the two approaches is around how you manage what context is provided. MCP Servers can fill up the AI coding assistant context window, and its hard to see what is being included (you are kind of at the mercy of the MCP Server). Piping the output to a markdown file and then adding this as steering can be an optimization technique. It will also allow you to review and edit what you provide - for many queries, you might actually only need a small portion of what the MCP Server might bring back. The other side however is that if the AI coding assistant needs information (context) that you did not include, you might get unexpected results. Depending on what you are doing, having the latest, up to date information might be important. These are things you need to think about.
 
 ---
 
@@ -155,15 +169,17 @@ Now that we have looked at providing the right context via steering files and MC
 
 The workflow is initiated when we create a new spec via a prompt in the chat interface. Kiro will transform that prompt and create the initial spec, creating a detailed set of requirements. It is important to note that at this stage, Kiro creates a new directory which is used as a container for all the artifacts produced (.kiro/{specname}). You can take a look at these as Kiro is working.
 
-After reviewing and iterating on the requirements, you move onto the next stage which is defining the technical design. This is where those steering files and MCP servers help direct the output of the LLM.
+After reviewing and iterating on the requirements, the next stage in the workflow is defining the technical design. This is where those steering files and MCP servers help direct the output of the LLM. 
 
-After the design has been ratified, you then move onto generating and implementation plan. This step generates a set of tasks that will implement the requirements against the technical design. These tasks will then be used to start the process of generating code.
+After the design has been reviewed and accepted (by you), you move onto the final step of the workflow, generating the implementation plan. This step generates a set of tasks that will implement the requirements against the technical design. These tasks will then be used to start the process of generating code.
 
 ![Three phases of SDD](/images/spec-three-phases.png)
 
 Each phase builds upon the previous one, with explicit approval gates to ensure quality and alignment before proceeding.
 
-Kiro also provides visual cues within the chat interface to help you move from one stage to the next. So when Kiro has completed the generation of requirements.md for example, you will see a cue to "proceed to the design stage" within the chat interface. Do not use this before you have reviewed the artefacts produced, more of that next.
+Kiro also provides visual cues within the chat interface to help you move from one stage to the next. So when Kiro has completed the generation of requirements.md for example, you will see a cue to "proceed to the design stage" within the chat interface.
+
+Lets dive into each of these workflow steps in more detail.
 
 ---
 
@@ -210,7 +226,7 @@ In addition the requirements.md will use other common terms to help provide clar
 **Examples**
 
 * Simple Event-Response - WHEN [user clicks submit button] THEN [system] SHALL [validate form data]
-* Conditional Behaviour - IF [user is authenticated] THEN [system] SHALL [display user dashboard]
+* Conditional Behavior - IF [user is authenticated] THEN [system] SHALL [display user dashboard]
 * Complex Conditions - WHEN [user submits form] AND [all required fields are completed] THEN [system] SHALL [process the submission]
 * Error Handling - WHEN [user submits invalid data] THEN [system] SHALL [display specific error messages]
 
@@ -234,7 +250,7 @@ The first version of the requirements.md file is rarely 100%, and so you will ne
 
 **Common Pitfalls**
 
-There are some common pitfalls that you might fall into when you first start off, so check this list and adjust your reuqirements as needed.
+There are some common pitfalls that you might fall into when you first start off, so check this list and adjust your requirements as needed.
 
 * **Vague Requirements** - Problem: "System should be fast" Solution: "WHEN user requests data THEN system SHALL respond within 2 seconds"
 * **Implementation Details in Requirements** - Problem: "System shall use Redis for caching" Solution: "WHEN user requests frequently accessed data THEN system SHALL return cached results"
@@ -284,29 +300,27 @@ WHEN account creation succeeds THEN system SHALL redirect to welcome page
 
 You can update the requirements.md file in two ways. You can use the Kiro editor to make changes, or you can ask Kiro to make those changes via the chat interface.
 
-In most cases you are likely to use both. As good as Kiro is at taking your prompts and making changes, sometimes it is quicker to edit requirements.md by hand. It is worth re-iterating that when you make any changes to the specification documents through edits in the editor, you will need to remind Kiro to reload them. We need to do this because when Kiro generated the initial requirements.md, it is still in its short term memory (context window).
+In practice (and as you being to work with specs on a more frequent basis) you are likely to use both. As good as Kiro is at taking your prompts and making changes, sometimes it is just quicker to edit requirements.md by hand, or perhaps you need to provide a level of detail that only hand editing will provide. 
 
-A prompt such as:
+It is worth re-iterating that when you make any changes to the specification documents through edits in the editor, you will need to remind Kiro to reload them. We need to do this because when Kiro generated the initial requirements.md, it is still in its short term memory (context window). A prompt such as:
 
 ```
 Please reload the requirements.md as I have made changes
 ```
 
-Is typically all you need to do. Kiro will provide you a positive confirmation of the changes made, so make sure you look out for that and confirm that it is what you have done.
+Kiro will provide you a positive confirmation of the changes made, so make sure you look out for that and confirm that it is what you have done.
+
+With the requirements completed, we are now ready to move to the next step in the workflow: Design.
 
 ---
 
 ## Design
 
-With the requirements completed, we are now ready to move to the next step in the workflow: Design.
-
-Kiro makes this easy for us as it provides visual cues within the IDE. We can start this process by clicking on the "Move to Design phase" button which will appear in the chat interface. 
-
-Occassionally the button might disappear - for example, we might have used the chat interface to work on or iterate on the requirements document. We can manually start the design process from the chat interface by using a prompt:
+Kiro makes this easy for us as it provides visual cues within the IDE. We can start this process by clicking on the "Move to Design phase" button which will appear in the chat interface. You can also start the design process from the chat interface by using a prompt:
 
 "Move to the design phase"
 
-And you should see that Kiro start initiating the generation of the design.md document. The process should take around 2-3 minutes, and once finished you should see the new file appear in the project workspace.
+Once you start the design phase, Kiro will start initiating the generation of the design.md document. The process should take around 2-3 minutes, and once finished you should see the new file appear in the project workspace.
 
 The design.md provides a number of sections:
 
@@ -318,7 +332,7 @@ The design.md provides a number of sections:
 * **Security Considerations**
 * **Performance Optimizations**
 
-Each section drills down into more detail. There is a lot of detail which yuou will need to spend time reviewing (and editing). We will do that in the next section. 
+Each section drills down into more detail. There is a lot of detail that will need to spend time reviewing (and editing). We will do that in the next section. 
 
 ---
 
@@ -354,7 +368,7 @@ You will see Kiro begin the the final step in the workflow, and after 2-3 minute
 
 So what just happened? Kiro has done the following:  
 
-* **Review Design Components** - it dentifies all system components that need to be built
+* **Review Design Components** - it identifies all system components that need to be built
 * **Identify Dependencies** - reviews and looks at what needs to be built before other components
 * **Consider Testing Requirements** - create a plan for test creation alongside implementation
 * **Sequence Tasks** - reviews the order of tasks to validate core functionality quickly
@@ -369,7 +383,7 @@ After responding, the tasks.md file will get generated and you can review.
 
 ---
 
-### Review and optimise your tasks.md
+### Review and optimize your tasks.md
 
 When you look at your tasks.md file, you will notice that Kiro has structured it in a particular way.
 
@@ -380,7 +394,7 @@ When you look at your tasks.md file, you will notice that Kiro has structured it
 
 If you selected the use of optional tasks, you will also see:
 
-* **Skip non critical tasks** Provides the ability to mark tasks as optional, by marking the task number with an asterix
+* **Skip non critical tasks** Provides the ability to mark tasks as optional, by marking the task number with a "*"
 
 ![a look at tasks](/images/nested-tasks.png)
 
@@ -388,7 +402,7 @@ If you selected the use of optional tasks, you will also see:
 
 ---
 
-#### Revewing Tasks
+#### Reviewing Tasks
 
 When reviewing your tasks.md file, there are two dimensions you need to think about: the tasks themselves, and the order in which tasks are ordered within the tasks.md
 
@@ -470,7 +484,7 @@ Throughout the rest of this workshop we are going to stick with the default sequ
 
 #### Managing Task dependencies
 
-One thing you need to think about as you review and potentially update the tasks is how your tasks related to eachother, specifically which tasks depend on others and whether some tasks need to be completed before others can be started.
+One thing you need to think about as you review and potentially update the tasks is how your tasks related to each other, specifically which tasks depend on others and whether some tasks need to be completed before others can be started.
 
 You can group Task dependency in three categories:
 
@@ -518,7 +532,7 @@ So you have now had a chance to review your tasks.md file. Here are some final t
 
 * **Detail** - Ensure that you have written tasks with the right level of detail and clarity (clear specific objective)
 * **Scope** - Set the appropriate scope for a task – should be completed with 1-4 hours of focused work, produces working, testable code, has a clear completion criteria, and builds incrementally
-* **Tracability** - Always include references to specific requirements being implemented, to provide a clear connection between task and user value
+* **Traceability** - Always include references to specific requirements being implemented, to provide a clear connection between task and user value
 
 ---
 
@@ -534,7 +548,7 @@ If you have updated/changed your tasks.md, again its important to let your AI co
 
 "I have updated the tasks.md - please reload"
 
-You are now ready to kick off the code generation.
+We are now ready to kick off the code generation.
 
 ---
 
@@ -542,9 +556,9 @@ You are now ready to kick off the code generation.
 
 You now have a set of tasks (and potentially sub tasks), and each task is a unit of work, or code generation. Tasks are numbers logically, with sub tasks marked with a decimal point (i.e. 1. Task 1, 1.1 Sub task of 1, 1.2 Sub task of 1, 2 Task 2).
 
-As we are using Kiro in this workshop, it provides a simple way to start and review tasks. If you look at your tasks.md, you will notice "Start Task" appears above the task block to be completed. If you have sub tasks, each block will have its own "Start Task" link.
+Kiro provides a simple way to start and review tasks. If you look at your tasks.md, you will notice "Start Task" appears above the task block to be completed. If you have sub tasks, each block will have its own "Start Task" link.
 
-Starting at the very first task, clicking on "Start Task" will get Kiro to start generating code. It will work through each item in the task until it has completed. You can follow progress by monitoring the chat window, where all output will be displayed.
+Starting at the very first task, when you click on "Start Task" Kiro will work through the task details and start generating code. It will work through each item in the task until it has completed. You can follow progress by monitoring the chat window, where all output will be displayed.
 
 > **Heads up!** As and when needed, Kiro will also use the terminal to run commands. You will see the terminal pop up, and it will be called "Kiro" (vs zsh or bash which would be more normal for VSCode users)
 
@@ -564,9 +578,7 @@ And Kiro will work through all tasks and sub tasks, reporting back through the c
 
 **Pay attention!**
 
-Kiro uses agentic AI to generate code. As such, by default its permissions will be limited (i.e. it will not have write access to your system). Therefore, as and when it needs to do certain things (create directories, use MCP Tools, etc), you will be prompted by Kiro to confirm. 
-
-Pay attention, otherwise you might have Kiro waiting and doing nothing until you respond.
+Kiro uses agentic AI to generate code. As such, by default its permissions will be limited (i.e. it will not have write access to your system). Therefore, as and when it needs to do certain things (create directories, use MCP Tools, etc), you will be prompted by Kiro to confirm. Pay attention, otherwise you might have Kiro waiting and doing nothing until you respond.
 
 You will see this in action when you start the labs later.
 
@@ -587,15 +599,15 @@ In addition to this, the chat interface should provide a detailed summary of wha
 
 #### Progressing through tasks
 
-Kiro will now work through each task.
+Kiro will work through each task as and when prompted. You might be wondering why it does not just start working through all the tasks, or why there isn't a "Complete all tasks" button. This is by design, as you should be reviewing and checking progress (review) after each task has been completed. Completing all tasks would make this a more significant challenge. 
 
-You might be wondering why there isn't a "Complete all tasks" button. This is by design, as you should be reviewing and checking progress (review) after each task has been completed. Completing all tasks would make this a more significant challenge. If you REALLY wanted to do this, use the chat interface and use something like "Execute all tasks in the spec".
+If you REALLY wanted to do this, use the chat interface and use something like "Execute all tasks in the spec".
 
 ---
 
 #### What happens when things go wrong!
 
-Occasionally you might encounter a problem - maybe your computer crashes, the network goes down, or Kiro just fails to respond. Don't panic. After you have recovered the issue, when you restart Kiro, it should detect the status of any in-flight tasks. You will see that there is a "retry" link that you can now use to re-do the task that had been interupted. Kiro will take care of picking up context from where it was and completing the task.
+Occasionally you might encounter a problem - maybe your computer crashes, the network goes down, or Kiro just fails to respond. Don't panic. After you have recovered the issue, when you restart Kiro, it should detect the status of any in-flight tasks. You will see that there is a "retry" link that you can now use to re-do the task that had been interrupted. Kiro will take care of picking up context from where it was and completing the task.
 
 ![Kiro retry](/images/kiro-task-fail-retry.png)
 
@@ -609,9 +621,9 @@ We have walked you through at a high level the workflow steps of a typical itera
 
 ---
 
-## The SDD Lifecycle
+## The spec driven development lifecycle
 
-*Spec driven development is still emerging and so areas such as the SDD lifecycle are still evolving - bear that in mind as we explore the current approach to this*
+*Spec driven development is still emerging and so areas such as the spec driven development lifecycle are still evolving - bear that in mind as we explore the current approach to this*
 
 In the previous sections we looked at the process of creating a new spec, and followed it through the three step workflow of requirements, design, and implementation (tasks). What if we wanted to change something though? Specs are living documents that track what was/is built. In this section we look at the typical lifecycle of specs, and how we manage change.
 
@@ -621,7 +633,7 @@ In the previous sections we looked at the process of creating a new spec, and fo
 
 ### Change scenarios
 
-There are a number of scenarios where you might need or want to make changes to your specs. Each scenario will require you toapproach it in slightly different ways. Lets dive into this.
+There are a number of scenarios where you might need or want to make changes to your specs. Each scenario will require you to approach it in slightly different ways. Lets dive into this.
 
 **Clarification**
 
@@ -680,7 +692,7 @@ when you make subsequent changes you will find that Kiro updates these.
 
 As you work with specs, you will need to implement a versioning strategy that helps you track updates and changes across both your specs and your code. The simplest way to do this is to version control your entire project workspace. This will enable ou to use Git to track changes and push commits atomically for the workflow steps (you can keep task implementation as separate commits).
 
-You should think about what version control strategy makes sense when you are working with specs. For example, do you want to create branches for each spec and then merge in later? 
+You should think about what version control strategy makes sense when you are working with specs. For example, do you want to create branches for each spec and then merge in later, or does a simpler workflow work?
 
 #### Deleting a specification
 
@@ -692,7 +704,7 @@ A good version control strategy is important when it comes to deleting a spec. S
 
 Good practices for managing specs are still emerging but we are beginning to see a few things you can do that will help you stay in control:
 
-* Version control artefacts so you can manage changes
+* Version control artifacts so you can manage changes
 * Create a version control strategy that allows you to manage changes at a spec level
 * Create a changelog to track changes in your project, and automate these using your AI Coding Tool (for example, Agent Hooks)
 
