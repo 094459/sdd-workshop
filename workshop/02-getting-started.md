@@ -719,7 +719,10 @@ Click on [Home](/README.md) to go back to the landing page
 
 # Additional reading material
 
-* [Kiro Blog](https://kiro.dev/blog/from-chat-to-specs-deep-dive/) - a deeper dive into how we got to SDD
-* [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) - a methodology and tooling perspective of SDD
-* [Advanced Development with Amazon Q Developer](https://catalog.workshops.aws/qadvanced/en-US?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) - a workshop that looks at how you can apply SDD using Amazon Q Developer
-* [Kiro Steering files](https://kiro.dev/docs/steering/) - official documentation for Kiro steering files
+* [Kiro Blog](https://kiro.dev/blog/from-chat-to-specs-deep-dive/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) - a deeper dive into how we got to spec driven development
+
+* [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) - a methodology and tooling perspective
+
+* [Kiro Steering files](https://kiro.dev/docs/steering/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) - official documentation for Kiro steering files
+
+* [What do you put in Workspace vs Global steering files - a blog post that helps you make sense of this](https://kiro.dev/blog/stop-repeating-yourself/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)

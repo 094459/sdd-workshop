@@ -8,7 +8,7 @@ This workshop can either be run in a traditional workshop environment that is le
 
 ### What are you going to need?
 
-* [Kiro](https://kiro.dev/downloads) - you will need to install Kiro, a new IDE that has native support for spec driven development (available for Windows, MacOS, and Linux)
+* [Kiro](https://kiro.dev/downloads?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) - you will need to install Kiro, a new IDE that has native support for spec driven development (available for Windows, MacOS, and Linux)
 * Python 3.10 (or later)
 * [Python uv](https://github.com/astral-sh/uv?tab=readme-ov-file#installation)
 * git

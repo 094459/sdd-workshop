@@ -6,21 +6,117 @@ In this section you will explore some of Kiro's capabilities that are not specif
 
 ## Kiro features - Agent Hooks
 
+A really neat feature of Kiro is Agent Hooks. This allows you to create agents that run automatically on certain events (currently File Save, File Create, and File Delete). You can also create these and then trigger them manually too.
 
-## Choosing different models
+From the Kiro activity bar, will see the Agent Hook panel. Clicking on the "+" starts the process of creating an Agent Hook. A panel will appear where you enter as a prompt, what you want your hook to do. After entering your prompt Kiro will start the process of creating your agent hook. You will see output on the chat interface.
 
-Look at different models (Auto vs specific) and when/why you might use them
+Once created you will see the agent hook screen where you define and configure your agent hook.
 
+![The agent hook creation screen](/images/kiro-agent-hook-create.png)
 
-## Managing how Kiro runs commands
+We can see that each hook has a title and description (the title is how it will appear in the agent hook panel on the Kiro activity bar). You can then configure when this agent hook is triggered (in this example, it is when I file is created) as well as which files and directories you want to monitor. Finally the instruction (or prompt) that Kiro will fire off when this agent hook is triggered.
 
+You can see that at any time we can disable/enable hooks by toggling the switch at the top of the screen. And if we want to, we can also delete this agent hook using the delete option. Agent hooks themselves are just json configuration files that will appear in the ".kiro/hooks" directory of your project workspace.
 
-Trust Commands
-
-
+You can track when an agent hook will trigger by monitoring the Kiro task queue. When Kiro is working through a task (in implementation phase), you might be wondering why the agent hook is not running or being triggered (based on whatever you asked it to do, so in this example add copyright headers on newly created files). This is because the current task is running in the queue, and the agent hook will be queued after. Once the task has completed, the agent hook will fire and execute whatever is needed (in the example above, adding copyright headers to any newly created files).
 
 ---
 
+## Providing context
+
+Kiro provides a wide array of sources for you to provide context. These are accessible when you hit the "#" character in the chat interface. This will bring up a menu option which lists all of the available sources. These include output from the terminal, git diffs, steering documents, specs and more.
+
+If when you attempt to use "#" and reference a steering or spec and they are not listed, you might need to force a re-index - see next, Codebase indexing.
+
+---
+
+## Codebase Indexing
+
+During the labs we forced Kiro to re-index the docs so that we just created. Whilst Kiro automatically indexes your codebase and documentation to provide intelligent code suggestions, navigation, and context-aware assistance, sometimes you might need to re-index.
+
+To force a re-index, use COMMAND + SHIFT + P (Mac) or CTRL + SHIFT + P to access Kiro's command palette and then type in Index to the search bar to view the available indexing options.
+
+You can read more in the official documentation pages, [Codebase Indexing](https://kiro.dev/docs/editor/codebase-indexing/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+
+---
+
+## Choosing the right model
+
+Kiro provides a number of different AI agent options to handle your development tasks, and these will change over time. As a developer you can either explicitly set a model you want to use (for example, Claude Sonnet 4.0, Claude Sonnet 4.5, etc) or you can set this to Auto.
+
+Auto is Kiro's default intelligent model router that combines multiple frontier models with advanced optimization techniques. Auto uses best in class LLM models (Claude Sonnet 4 and alike) to provide you the best quality for the type of tasks assigned to the agent.
+
+You configure the model via the pull down option in the chat interface. Auto is selected by default, but when you click on that it will bring up a menu as to which models are available.
+
+**Credits**
+
+You will notice when you bring up the available models that there is "credit" associated with each model. Your Kiro usage is tied to your service tier you have subscribed to (Kiro free, Kiro Pro, Kiro Pro+, and Kiro Power) therefore this is a consideration you should take when selecting a given model for work. You can dive deeper into this by reading the [Billing page](https://kiro.dev/docs/billing/).
+
+Switching to cheaper models or more expensive models based on the tasks you are running is something that you will start to get an intuition for. 
+
+There are some great resources to help you think about which models to use. Start off by reading the section on [Model Selection from the official Kiro docs](https://kiro.dev/docs/chat/model-selection/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) and then read this blog post, [Making your Kiro credits go further](https://kiro.dev/blog/making-credits-go-further/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) to dive deeper.
+
+---
+
+## Keyboard shortcuts
+
+Kiro IDE provides a wide range of keyboard shortcuts to help you work efficiently. You can view these on the official [Kiro documentation pages here](https://kiro.dev/docs/editor/keyboard-shortcuts/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+
+---
+
+## Kiro settings
+
+Kiro has a number of settings that allow you to customize it to your preferences. In this section we look at some of the more interesting options available to you.
+
+### Agent Autonomy
+
+Agent Autonomy can be configured both in settings, but is also present in the chat interface (the toggle option labeled Autopilot). There are two settings: Autopilot and Supervised.
+
+* Autopilot mode is Kiro's autonomous execution mode that allows the agent to make code changes across your codebase and complete complex tasks with minimal intervention. It's a key feature that enables Kiro to work more independently on your behalf.
+* Supervised mode applies each proposed change and then presents it for your review. You can accept, reject, or request further adjustments to any changes made. This approach gives you full visibility into each modification and lets you guide the development process to maintain code quality standards.
+
+To understand how these work in more detail, and when you might want to use one mode over another, read the [Autopilot](https://kiro.dev/docs/chat/autopilot/) documentation page.
+
+### Model Context Protocol (MCP)
+
+You can disable MCP Servers from the settings. There are two options: Enabled and Disabled, with the default being Enabled.
+
+### Trusted Commands
+
+You can define a list of commands you are happy for Kiro to run without prompting you. These are defined within this property in the settings file.
+
+You can manually add these, or as you are using Kiro, as a command is being run, you can add it to the trusted list. You can use wild cards to open up a broader range of commands, or be explicit as you want.
+
+**Warning!**
+
+It goes without saying, you should never trust destructive commands, so be careful if you define wild cards that might allow those commands to run.
+
+### Agent Notification
+
+When Kiro starts generating code to complete a task, you might start working on other tasks and move Kiro to the background. What happens if Kiro then needs your attention? What if there is an issue that stops its progress? This is where Agent Notifications are used, providing you with notifications using your operating systems level notifications to warn you that it needs your attention!
+
+### Autocomplete
+
+If you have used AI Coding Assistants when writing code, you might have found autocomplete helpful. This is where Kiro will provide blocks of code based on what you are typing.
+
+This is **disabled** by default in Kiro, but can be enabled via Settings, or by clicking on the Autocomplete link in the bottom status bar.
+
+---
+
+## Source Control
+
+Kiro's Source Control view provides comprehensive Git integration with AI-enhanced features to streamline your version control workflow.
+
+There are two nice features you get with Kiro.
+
+1. Kiro can automatically generate useful commit messages based on the activity and changes that have been made.
+2. You can include your current git changes in any chat conversation by typing #Git Diff which allows Kiro to see your staged and unstaged changes, making it easier to get contextual help with your modifications. 
+
+
+Read the official [documentation on Source Control here](https://kiro.dev/docs/editor/source-control/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+
+
+---
 
 Click on [Home](/README.md) to go back to the landing page
 
@@ -28,4 +124,4 @@ Click on [Home](/README.md) to go back to the landing page
 
 # Additional reading material
 
-* [Official Kiro docs](https://kiro.dev/docs/)
+* [Official Kiro docs](https://kiro.dev/docs/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)

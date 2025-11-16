@@ -262,4 +262,4 @@ Click on [Home](/README.md) to go back to the landing page
 
 # Additional reading material
 
-* [Official Kiro docs](https://kiro.dev/docs/)
+* [Official Kiro docs](https://kiro.dev/docs/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
