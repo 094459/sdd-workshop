@@ -96,6 +96,8 @@ SDD is a new approach and so use cases are still emerging. You might not need or
 
 **Less Suitable Scenarios**
 
+You can apply SDD to other use cases, but your mileage will vary. For example, Vibe Coding is a great way to generate high fidelity prototypes to get early feedback from your stakeholders. Using Vibe mode may be more effective for that use case. Also this list is nuanced - for example, in the context of a spec driven development session, simple bug fixes as well as the use of established patterns is complimentary. 
+
 * Simple Bug Fixes: When the change is straightforward and well-understood (overhead exceeds value)
 * Experimental Prototypes: When the goal is rapid experimentation rather than production code (you lack the clarity specs require)
 * Time critical Hotfixes: When immediate action is required without time for planning
@@ -184,7 +186,7 @@ SDD is designed to complement, not replace, existing development methodologies. 
 
 * Agile Sprints: Use specs for larger user stories or epics
 * Feature Branches: Create specs before starting feature development
-
+* Vibe Coding: Use Vibe coding to experiment and generate ideas/prototypes, before creating specs from what you have learned
 
 ---
 
