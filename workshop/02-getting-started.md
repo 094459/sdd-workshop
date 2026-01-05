@@ -57,14 +57,18 @@ Providing the right context is key to getting the best out of AI coding assistan
 
 **Generating or adding steering files**
 
-The "Agent Steering" panel from the Kiro activity bar is where any steering documents are listed. From here you can generate or create new steering docs. Steering documents are scoped at either a global (Global agent steering - they will appear in every project you use Kiro with) or project level (Workspace agent steering - the steering documents will appear in just this project). When creating steering files, you will be asked to specify what the scope of the steering file is. 
+The "Agent Steering" panel from the Kiro activity bar is where any steering documents are listed. From here you can generate or create new steering docs. 
+
+![Creating steering docs](/images/kiro-steering-docs.png)
+
+Steering documents are scoped at either a global (Global agent steering - they will appear in every project you use Kiro with) or project level (Workspace agent steering - the steering documents will appear in just this project). When creating steering files, you will be asked to specify what the scope of the steering file is. 
 
 ![steering file options in Kiro](/images/kiro-steering.png)
 
 These steering documents are stored in a specific location in your computer:
 
-* ".kiro/steering" for workspace agent steering files
-* "~/.kiro/steering" for global steering files. 
+* **".kiro/steering"** for workspace agent steering files
+* **"~/.kiro/steering"** for global steering files. 
 
 How you create your steering documents will depend on whether you are working on an existing codebase (brownfield) or creating a new project (greenfield). In the next sections we will look at this.
 
@@ -72,7 +76,7 @@ How you create your steering documents will depend on whether you are working on
 
 ### Steering documents with existing applications
 
-When using Kiro with an existing codebase, you can use the "Generate Steering" button in the Steering Docs widget to automatically generate steering files for your project. Kiro will review your project workspace, and then generate its foundational steering files to establish core project context. It will create three files: product.md, tech.md, and structure.md
+When using Kiro with an existing codebase, you can use either use the "Generate Steering" button in the Steering Docs widget, or select "Project Steering files" when you use click on the **"+"** to add a steering file, to automatically generate steering files for your project. Kiro will review your project workspace, and then generate its foundational steering files to establish core project context. It will create three files: product.md, tech.md, and structure.md
 
 * Product Overview (product.md) - Defines your product's purpose, target users, key features, and business objectives. This helps Kiro understand the "why" behind technical decisions and suggest solutions aligned with your product goals.
 * Technology Stack (tech.md) - Documents your chosen frameworks, libraries, development tools, and technical constraints. When Kiro suggests implementations, it will prefer your established stack over alternatives.
@@ -215,7 +219,7 @@ This structured approach offers several benefits:
 
 Requirements helps you transform vague feature requests into these well-structured requirements, making the development process more efficient and reducing misunderstandings between product and engineering teams.
 
-In addition the requirements.md will use other common terms to help provide clarity and consistentency:
+In addition the requirements.md will use other common terms to help provide clarity and consistency:
 
 * **role**: Describes the user persona you are referring to (you may have many)
 * **feature**: Describes the feature you are wanting to implement

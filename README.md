@@ -15,7 +15,7 @@ This workshop can either be run in a traditional workshop environment that is le
 
 ## What is going to be covered
 
-### 1 - How did we get here? The evolution that led to specification driven development (20 mins)
+### 1 - How did we get here? The evolution that led to specification driven development (10 mins)
 
 In this short section you will look at the evolution of AI coding assistants and how they have changed over time. We explore some of the challenges, and how specification driven development provides solutions.
 
