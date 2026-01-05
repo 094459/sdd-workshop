@@ -4,7 +4,11 @@
 
 In this section you will explore some of Kiro's capabilities that are not specific to spec driven development, but will help you as you using Kiro to work on writing code.
 
-## Kiro features - Agent Hooks
+## Kiro features
+
+Kiro features some neat features that are very handy as you being to work with spec driven development.
+
+### Agent Hooks
 
 A really neat feature of Kiro is Agent Hooks. This allows you to create agents that run automatically on certain events (currently File Save, File Create, and File Delete). You can also create these and then trigger them manually too.
 
@@ -19,6 +23,18 @@ We can see that each hook has a title and description (the title is how it will 
 You can see that at any time we can disable/enable hooks by toggling the switch at the top of the screen. And if we want to, we can also delete this agent hook using the delete option. Agent hooks themselves are just json configuration files that will appear in the ".kiro/hooks" directory of your project workspace.
 
 You can track when an agent hook will trigger by monitoring the Kiro task queue. When Kiro is working through a task (in implementation phase), you might be wondering why the agent hook is not running or being triggered (based on whatever you asked it to do, so in this example add copyright headers on newly created files). This is because the current task is running in the queue, and the agent hook will be queued after. Once the task has completed, the agent hook will fire and execute whatever is needed (in the example above, adding copyright headers to any newly created files).
+
+---
+
+### Powers
+
+Powers give your AI agent instant access to specialized knowledge for any technology. Powers package your tools, workflows, and best practices into a format that Kiro can activate on-demand. When you mention relevant keywords, Kiro loads the power's context and tools automatically. They help address some of the context window challenges that working with AI coding agents brings, helping to reduce context overload and provide the right context just when its needed.
+
+Powers are just a set of assets that you bundle together in a directory, which Kiro will recognize and provide the supporting integration into the Kiro IDE. A POWER.md file is created which provides a specialized steering file that combines information, as well as optional details about MCP servers that might be needed or Agent Hooks that are configured. The POWER.md file also provides details to Kiro on how it should be invoked (what keywords to watch out for).
+
+Installing Powers is super easy - there is a new Kiro Powers icon on the navigation bar which is where you will see available Powers you can use. Installing them is as simple as a few clicks and you are good to go.
+
+What makes this so useful is that you can bundle everything you need as a Power, and Kiro will load and then unload as needed. There are already many Powers available that you can use, and you can create your own easily. Creating Powers is outside the scope of this workshop, but you can find out more by checking out the [Powers](https://kiro.dev/docs/powers/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) details on the Kiro website.
 
 ---
 
