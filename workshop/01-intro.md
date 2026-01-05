@@ -50,7 +50,7 @@ Developers were talking, practitioners were sharing tools and prototypes, and ke
 
 Spec driven development is an approach that helps developers start with intent, and then move through collecting the right supporting context to generate technical designs and implementation details. It breaks down the implementation into discrete tasks that AI coding assistants can execute, supporting by just the right level of context.
 
-In July, [Kiro](https://kiro.dev) was launched, a new IDE that provided an opinionated and native approach for supporting a new workflow when using AI coding assistants - spec driven development.
+In July, [Kiro](https://kiro.dev?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) was launched, a new IDE that provided an opinionated and native approach for supporting a new workflow when using AI coding assistants - spec driven development.
 
 When you create a "spec", this opinionated workflow will walk you through three phases: Requirements, Design, and then Tasks (Implementation).
 

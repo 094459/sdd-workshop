@@ -50,7 +50,7 @@ Click on [Using spec driven development with existing applications](/workshop/04
 
 ### 5 - Tools and Resources (10 mins)
 
-During this hands on tutorial we used a new developer tool called [Kiro](https://kiro.dev) that provides native support for specification driven development. In this section we will dive through some of the key features to help you get the most out of this tool. We will cover the core features and how they work, as well as look at configuration options and and share tips that you can use straight away.
+During this hands on tutorial we used a new developer tool called [Kiro](https://kiro.dev?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) that provides native support for specification driven development. In this section we will dive through some of the key features to help you get the most out of this tool. We will cover the core features and how they work, as well as look at configuration options and and share tips that you can use straight away.
 
 Click on [Tools and Resources](/workshop/05-tools-and-resources.md) to dive deeper into some of Kiro's features and look at additional resources to help you do more.
  

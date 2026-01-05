@@ -72,7 +72,7 @@ You configure the model via the pull down option in the chat interface. Auto is 
 
 **Credits**
 
-You will notice when you bring up the available models that there is "credit" associated with each model. Your Kiro usage is tied to your service tier you have subscribed to (Kiro free, Kiro Pro, Kiro Pro+, and Kiro Power) therefore this is a consideration you should take when selecting a given model for work. You can dive deeper into this by reading the [Billing page](https://kiro.dev/docs/billing/).
+You will notice when you bring up the available models that there is "credit" associated with each model. Your Kiro usage is tied to your service tier you have subscribed to (Kiro free, Kiro Pro, Kiro Pro+, and Kiro Power) therefore this is a consideration you should take when selecting a given model for work. You can dive deeper into this by reading the [Billing page](https://kiro.dev/docs/billing/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el).
 
 Switching to cheaper models or more expensive models based on the tasks you are running is something that you will start to get an intuition for. 
 
@@ -97,7 +97,7 @@ Agent Autonomy can be configured both in settings, but is also present in the ch
 * Autopilot mode is Kiro's autonomous execution mode that allows the agent to make code changes across your codebase and complete complex tasks with minimal intervention. It's a key feature that enables Kiro to work more independently on your behalf.
 * Supervised mode applies each proposed change and then presents it for your review. You can accept, reject, or request further adjustments to any changes made. This approach gives you full visibility into each modification and lets you guide the development process to maintain code quality standards.
 
-To understand how these work in more detail, and when you might want to use one mode over another, read the [Autopilot](https://kiro.dev/docs/chat/autopilot/) documentation page.
+To understand how these work in more detail, and when you might want to use one mode over another, read the [Autopilot](https://kiro.dev/docs/chat/autopilot/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) documentation page.
 
 ### Model Context Protocol (MCP)
 
