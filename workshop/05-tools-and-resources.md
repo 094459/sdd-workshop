@@ -30,11 +30,17 @@ You can track when an agent hook will trigger by monitoring the Kiro task queue.
 
 Powers give your AI agent instant access to specialized knowledge for any technology. Powers package your tools, workflows, and best practices into a format that Kiro can activate on-demand. When you mention relevant keywords, Kiro loads the power's context and tools automatically. They help address some of the context window challenges that working with AI coding agents brings, helping to reduce context overload and provide the right context just when its needed.
 
-Powers are just a set of assets that you bundle together in a directory, which Kiro will recognize and provide the supporting integration into the Kiro IDE. A POWER.md file is created which provides a specialized steering file that combines information, as well as optional details about MCP servers that might be needed or Agent Hooks that are configured. The POWER.md file also provides details to Kiro on how it should be invoked (what keywords to watch out for).
+Powers are just a set of assets that you bundle together in a directory, which Kiro will recognize and provide the supporting integration into the Kiro IDE. A POWER.md file is created which provides a specialized steering file that combines information, as well as optional details about MCP servers that might be needed or Agent Hooks that are configured. The POWER.md file also provides details to Kiro on how it should be invoked (what keywords to watch out for). What makes this so useful is that you can bundle everything you need as a Power, and Kiro will load and then unload as needed during your working sessions, helping you to optimize how the context window is managed.
 
 Installing Powers is super easy - there is a new Kiro Powers icon on the navigation bar which is where you will see available Powers you can use. Installing them is as simple as a few clicks and you are good to go.
 
-What makes this so useful is that you can bundle everything you need as a Power, and Kiro will load and then unload as needed. There are already many Powers available that you can use, and you can create your own easily. Creating Powers is outside the scope of this workshop, but you can find out more by checking out the [Powers](https://kiro.dev/docs/powers/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) details on the Kiro website.
+![Installing Kiro Powers](/images/kiro-power-1.png)
+
+After you have installed a Power, you will see it appear in the list of available Powers. Clicking on any Power will show you how you can update/remove or just try it out in the chat interface.
+
+![Installed Powers](/images/kiro-power-2.png)
+
+ There are already many Powers available that you can use, and you can create your own easily. Creating Powers is outside the scope of this workshop, but you can find out more by checking out the [Powers](https://kiro.dev/docs/powers/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) details on the Kiro website.
 
 ---
 
