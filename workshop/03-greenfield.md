@@ -556,7 +556,9 @@ Kiro will review existing specs you have created. In our case, it is going to cr
 
 ![Lab](/images/lab-header.png)
 
-Keeping track of changes of your spec files is something that you will need to plan for. In this final lab, we will look at one approach you can experiment with. We will create a changelog within our project, and then use one of Kiro's features (Agent Hooks) to help manage changes to this project through this markdown document.
+Keeping track of changes of your spec files is something that you will need to plan for. Using source control within your project will help you track these changes at an atomic level, and you should be ensuring that you check in these assets into your version control (we have been doing that throughout this workshop so far).
+
+In this final lab, we will look at another approach that might be useful to help you track changes at a higher level. We are going to use a feature of Kiro called "Agent Hooks" that allow you to automate development tasks. We will create a changelog file (changelog.md) within our project, and then manage changes automatically via agent hooks.
 
 #### Lab-11
 
@@ -615,6 +617,8 @@ Add a new requirement that the export file is password protected. Passwords shou
 ```
 
 The new Agent hook will fire off once Kiro has completed the spec generation update (the three step workflow). If you click on the task queue, you will see that "generate spec" will be listed until the workflow has completed. Kiro agent hooks run sequentially not in parallel.
+
+![agent hooks in the queue](/images/kiro-agent-hook-queue.png)
 
 9. Complete the three steps of the workflow, but do not start any of the tasks in the implementation plan - we don't need to see those for this lab.
 
