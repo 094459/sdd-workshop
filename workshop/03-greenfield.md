@@ -618,7 +618,13 @@ The new Agent hook will fire off once Kiro has completed the spec generation upd
 
 9. Complete the three steps of the workflow, but do not start any of the tasks in the implementation plan - we don't need to see those for this lab.
 
-10. Once these have been completed, the agent hook should fire up and update the changelog.md - review the changes. You can tweak the prompt within the agent hook to be as detailed or sparse as you want. With this approach, we can automate capturing information as we change add and remove specs from this project.
+10. Once these have been completed, the agent hook should fire up and update the changelog.md
+
+![agent hook updating changelog](/images/kiro-agent-hook-changelog.png)
+
+Review the changes in the changelog.md file against the spec changes.
+
+You can tweak the prompt within the agent hook to be as detailed or sparse as you want. With this approach, we can automate capturing information as we change add and remove specs from this project.
 
 
 ![Lab](/images/lab-header-end.png)
