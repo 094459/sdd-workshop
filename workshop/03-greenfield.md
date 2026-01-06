@@ -618,7 +618,7 @@ Add a new requirement that the export file is password protected. Passwords shou
 
 9. Complete the three steps of the workflow, but do not start any of the tasks in the implementation plan - we don't need to see those for this lab.
 
-10. Once these have been completed, invoke the agent hook by typing "/" in the Kiro chat interface. Once you enter "/" you should see the agent hoook you create appear.
+10. Once these have been completed, invoke the agent hook by typing "/" in the Kiro chat interface. Once you enter "/" you should see the agent hook you create appear.
 
 ![manually triggered agent hook](/images/kiro-agent-hook-manual.png)
 
