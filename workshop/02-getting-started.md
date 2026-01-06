@@ -643,7 +643,7 @@ There are a number of scenarios where you might need or want to make changes to 
 
 Minor updates that do not functionally change design or implementation but might help improve precision. Some examples of this include fixing typos, formatting improvements, clearer wording.
 
-For these kinds of trivial changes, you and adjust/amend the documents directly as they will not impact any downstream workflow changes. The exception perhaps being where those typos are reflect in artifacts that are built (e.g you wanted to create a page called "Help" but created a typo called "Welp" and now you want to change that back - this would require you to kick off a workflow refresh which we will come to in a bit)
+For these kinds of trivial changes, you and adjust/amend the documents directly as they will not impact any downstream workflow changes. The exception perhaps being where those typos are reflect in artifacts that are built (e.g you wanted to create a page called "Help" but created a typo called "Welp" and now you want to change that back - this would require you to kick off a workflow refresh)
 
 **Discoveries**
 
