@@ -125,7 +125,21 @@ This is **disabled** by default in Kiro, but can be enabled via Settings, or by 
 
 ---
 
-## Source Control
+## Kiroignore
+
+You can create a file in your project workspace that prevents Kiro from reading specific files in your workspace. Using familiar gitignore syntax, you define patterns for files that should remain private—credentials, secrets, or content you prefer to keep out of agent context.
+
+You create a **".kiroignore"** in the root directory of your project workspace, and then add items as you would a .gitignore file.
+
+Read more about some of the additional configuration options [here](https://kiro.dev/docs/editor/kiroignore/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+
+---
+
+## Source Control and Checkpoints
+
+As you generate code using Kiro, there will be times when you need to undo changes that have been made. Making sure that you have initialized the project directory to use version control (for example, git init) should be something you think about. Using Kiro, you have multiple ways of managing the state of files in your project workspace.
+
+### Source Control
 
 Kiro's Source Control view provides comprehensive Git integration with AI-enhanced features to streamline your version control workflow.
 
@@ -134,8 +148,22 @@ There are two nice features you get with Kiro.
 1. Kiro can automatically generate useful commit messages based on the activity and changes that have been made.
 2. You can include your current git changes in any chat conversation by typing #Git Diff which allows Kiro to see your staged and unstaged changes, making it easier to get contextual help with your modifications. 
 
-
 Read the official [documentation on Source Control here](https://kiro.dev/docs/editor/source-control/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+
+### Checkpoints
+
+In addition to providing a visual overview of your files version control, Kiro also provides something called Checkpoints. Each time you send a prompt to Kiro, it creates a “checkpoint”. Checkpoints appear as markers in your chat history. You can hit Restore on a checkpoint marker to rewind both your codebase and Kiro’s context back to that point in time. Any changes made to your codebase by Kiro after that checkpoint are reverted, and any context additions (chat interactions) after that point are discarded as well.
+
+Checkpoints act as a safety net that enables you to confidently explore multiple approaches to a problem, try different models for a given task, recover from mistakes or misunderstandings by the agent, etc.
+
+Checkpoints work by snapshotting the contents of a file each time the Kiro agent modifies it using one of its built-in file modification tools, and then restoring that snapshot when you revert to that checkpoint.
+
+Note that Kiro does not track any changes to a file made outside of the Kiro agent. This means that if Kiro snapshots a file and then you, for example, manually edit that same file or run a code formatting tool on it, when you revert to that checkpoint, your changes will be lost. Kiro also does not track file changes made by any MCP tools or bash commands that it may run as part of its execution.
+
+### Reverting changes
+
+Reverts are similar to checkpoints, but differ in two key aspects. First, reverts only undo changes made by the latest turn of the agent, whereas checkpoints can undo changes made over multiple turns. Second, reverts only revert file changes, whereas checkpoints undo file changes as well as discard context additions past the checkpoint.
+
 
 
 ---

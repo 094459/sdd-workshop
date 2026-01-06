@@ -10,8 +10,11 @@ In this lab we are going to apply everything we have learned in the previous sec
 
 At the end of this lab, you will have completed both creating and updating your first spec driven project, for a new (greenfield) application. In the next lab you will apply spec driven workflows to work with an existing project (brownfield).
 
----
+**Make sure you have your dependencies installed**
 
+Before beginning, make sure you have installed the dependencies required for this workshop as outlined in the [README](/README.md).
+
+---
 
 ![Lab](/images/lab-header.png)
 
@@ -22,10 +25,12 @@ In this lab we are going to set our project up with everything we need.
 ![Lab](/images/lab-header-end.png)
 
 
-1. Create a new project workspace on your machine - I am going to call mine "~/kiro/workshop-greenfield"
+1. Create a new project workspace on your machine. Create a directory called "kiro" and from within that directory, create a project workspace called "sdd-greenfield". Use the following commands if you are using a Linux or MacOS machine, or use an equivalent command or Windows Explorer to create these directories.
+
+Open up a new terminal, and from your home directory enter the following commands:
 
 ```
-mkdir ~/kiro/workshop-greenfield && cd workshop-greenfield
+mkdir ~/kiro/sdd-greenfield && cd sdd-greenfield
 ```
 
 2. Initialize git - we are going to use git to track all specification and code changes within our project - this will allow us to track and revert to a given state as we need.
@@ -40,13 +45,13 @@ git init
 kiro .
 ```
 
-With Kiro launched we are ready for the next lab.
+With Kiro launched we are ready for the next lab. Before you proceed though, spend some time navigating and exploring Kiro.
 
 ----
 
 ![Lab](/images/lab-header.png)
 
-In this lab we are going to define some steering documents we want Kiro to use as it starts to architect and design solutions against our requirements. We are going to implement two kinds of steering documents so you can see how to configure them. We will create a globally scoped steering document that an organization might typically use to control certain aspects of projects across your organization. Then we will create one that perhaps a developer might want to implement as their own preferences.
+In this lab we are going to create a steering document that we want Kiro to use as it starts to architect and design solutions against our requirements.
 
 #### Lab-02
 
@@ -59,7 +64,7 @@ In this lab we are going to define some steering documents we want Kiro to use a
 
 ![Steering document pop up menu](/images/adding-steering-menu.png)
 
-3. Select the first option "Workspace agent steering" and in the dialog that appears next, you need to enter a name for this steering file. The rule of thumb here is that it should be short but descriptive enough to help someone know what this might be. We are going to call ours "Project-Standards", so type that and then press enter.
+3. Select the first option "Global agent steering" and in the dialog that appears next. This will configure a project specific steering file. Enter a name for this steering file. The rule of thumb here is that it should be short but descriptive enough to help someone know what this might be. We are going to call ours "Project-Standards", so type that and then press enter.
 
 4. This will bring up steering file in the editor. Replace the content with the following:
 
@@ -94,26 +99,22 @@ Use the following project structure
 	├── src/templates/
 	├── src/extensions.py
 
-# Python Package Management with uv
+## Local and Prod configurations
 
-Use uv exclusively for Python package management in all projects.
+- Run local development setups on 127.0.0.1:5001
+- Run production configurations via gunicorn
+- Configure via env variables
 
-## Package Management Commands
+## Python Package Management with uv
 
+- Use uv exclusively for Python package management in all projects.
 - All Python dependencies **must be installed, synchronized, and locked** using uv
 - Never use pip, pip-tools, poetry, or conda directly for dependency management
-
-Use these commands
-
-- Install dependencies: `uv add <package>`
-- Remove dependencies: `uv remove <package>`
-- Sync dependencies: `uv sync`
-
-## Running Python Code
-
+- Use these commands - Install dependencies: `uv add <package>`,  Remove dependencies: `uv remove <package>` and Sync dependencies: `uv sync`
 - Run a Python script with `uv run <script-name>.py`
 - Run Python tools like Pytest with `uv run pytest` or `uv run ruff`
 - Launch a Python repl with `uv run python`
+- Configure [tool.hatch.build.targets.wheel] packages with the correct value for the project
 
 ```
 
@@ -123,13 +124,13 @@ Save the file and you should now have your steering file setup. What have we don
 - use specific Python frameworks
 - use uv for package and dependency management
 
-5. From Kiro's IDE, bring up the command palette (on a Mac this is SHIFT + COMMAND + P, and Windows it is CTRL + SHIFT + P) and from the dialog box type "Kiro" and then select "Kiro: Docs force re-index" option.
+> **Where's my steering file?** You might be wondering why you cannot see your steering file in your project workspace. This is because we created a global steering file, and these reside outside of your project workspace in the **".kiro"** directory. Have a look at this directory in a separate terminal session and you will see your steering file.
+
+5. As we have created a new steering document, we can update Kiro's document index to make sure that it includes this new file we have created. From Kiro's IDE, bring up the command palette (on a Mac this is SHIFT + COMMAND + P, and Windows it is CTRL + SHIFT + P) and from the dialog box type "Kiro" and then select "Kiro: Docs force re-index" option.
 
 ![re-indexing steering docs in Kiro](/images/kiro-reindex-docs.png)
 
-6. In the Kiro IDE, click on the "+" at the top to open a new session, select Vibe. In the chat interface click on the # and select "Steering" which should bring up the steering file you created. Select this, and you should see it appear in a highlighted block in the chat interface.
-
-Now enter the following in the chat window. 
+6. In the Kiro IDE, click on the "+" at the top to open a new session, select Vibe. Now enter the following in the chat window. 
 
 ```
 Show (don't create) me some code that implements a simple API that returns a json date object
@@ -137,57 +138,13 @@ Show (don't create) me some code that implements a simple API that returns a jso
 
 Review the output - you should see that it has respected the preferences we have just defined.
 
-7. From the Kiro activity bar, select the Source Control icon. In the dialog box enter "Steering file created" and then click on the Commit button. When the menu comes up, choose Yes. You should now see your first commit in the graph in the bottom panel. Switch back to the Kiro screen by clicking on the Kiro icon in the activity bar.
-
----
-
-![Lab](/images/lab-header.png)
-
-We are going to add a number of MCP Servers to show you how you can configure these. We are going to be using the AWS Docs Knowledgebase MCP Server to provide us with the latest AWS docs, and the AWS Pricing MCP Server to provide us with Pricing information.
-
-#### Lab-03
-
-1. From the Kiro tab, click on the edit icon in the MCP Servers widget
-
-2. This will open up the "mcp.json" file, and you should notice that there are two selection boxes: User Config and Workspace Config - click on "Workspace Config" and you should notice that the file path changes.
-
-3. Replace the contents of the mcp.json file in the editor with the following
-
-```
-{
-  "mcpServers": {
-    "awslabs.aws-pricing-mcp-server": {
-      "command": "uvx",
-      "args": [
-        "awslabs.aws-pricing-mcp-server@latest"
-      ]
-    },
-    "awslabs.aws-documentation-mcp-server": {
-      "command": "uvx",
-      "args": [
-        "awslabs.aws-documentation-mcp-server@latest"
-      ]
-    }   
-  }
-}
-```
-
-4. Save the file - it will take a few minutes as Kiro will be downloading the MPC libraries via uvx. When it is finished, you should now see several MCP servers in the MCP Server widget.
-
-5. Right click on one of the MCP Servers - you will see you are able to disable this MCP Server, as well as enable/disable the tools they make available. Right click and enable all the tools.
-
-6. Explore your project workspace under ".kiro" and look for the MCP Server configuration file.
-
-
-![Lab](/images/lab-header-end.png)
-
 ---
 
 ![Lab](/images/lab-header.png)
 
 We are going to develop a new application using the spec driven approach. The application itself is not important, but is a useful way to show the SDD workflow. We are going to create a deliberately simplified application (a web application to manage our tasks) so that we can complete a full iteration in the time of the workshop. 
 
-#### Lab-04
+#### Lab-03
 
 1. We are going create an initial specification,so from the "Lets Build" panel, make sure that "Spec" is selected.
 
@@ -211,13 +168,15 @@ We are going to develop a new application using the spec driven approach. The ap
 
 With the first artefact (requirements.md) created, we now need to review and refine. In this lab we will look at the different approaches you can take and how to then move to the next step in the workflow.
 
-#### Lab-05
+#### Lab-04
 
 1. Open up the requirements.md and review the introduction, which expands upon the initial prompt. You will typically not need to review/edit this section, but it is worth making sure this has aligned with the feature you are trying to create.
 
 2. Review each Requirement and User Story - do they make sense? Do they include things that you would have expected, and maybe some you did not? Are the requirements defined to the right level (i.e. not over engineered)?
 
-3. Add a new requirement of your own. We can do this one of two ways. We can directly edit the file, or we can ask Kiro to add a new requirement via the chat interface. Lets add a new requirement to add a help page to this application (assuming this requirement was not generated after the initial generation)
+3. Add a new requirement of your own. We can do this one of two ways. We can directly edit the file, or we can ask Kiro to add a new requirement via the chat interface.
+
+Lets add a new requirement to add a help page to this application (assuming this requirement was not generated after the initial generation)
 
 First of all try via the chat interface and enter the following:
 
@@ -225,10 +184,10 @@ First of all try via the chat interface and enter the following:
 
 Review the output and check the requirements.md file. It should now have a new requirement. Does it look ok? Once you have looked at this delete this new requirement - don't worry, we are going to add it again, but this time by directly editing the document.
 
-4. You can directly update the requirement.md if you prefer. Edit your requirements.md file and append the following new requirement to the end, making sure to change the number "6" below so that its the next in sequence.
+4. You can also directly update the requirement.md if you prefer. Edit your requirements.md file and remove the new requirement that was added in the previous step, and append the following new requirement in its place, making sure to change the number of the requirements so that its the next in sequence.
 
 ```
-### Requirement 6
+### Requirement {next in sequence}
 
 **User Story:** As a User, I want to access a help page, so that I can understand how to use the application
 
@@ -247,7 +206,7 @@ Save the document.
 
 "I have updated the requirements - please reload and review"
 
-> We did not need to do this when we asked Kiro to add a new requirement via the chat interface. This is something to think about as you start to work more in creating your specs. 
+> **Tip!** You do not need to do this when we asked Kiro to add a new requirement via the chat interface. This is something to think about as you start to work more in creating your specs. 
 
 Review the output to confirm that Kiro has understood the changes you have made - it will typically echo these back to you.
 
@@ -263,11 +222,11 @@ Kiro should start to work on the next artefact, the design.md, which we will div
 
 Kiro will now use the steering documents we created initially, together with the requirements we defined in the requirements.md file to build out an initial architecture and design. In this lab we are going to dive into this.
 
-#### Lab-06
+#### Lab-05
 
-![Lab](/images/lab-header-end.png)
+1. In the chat interface take a look at the output of the generation process. You might notice that you get prompted by Kiro to use one of its internal tools (web_search) as it looks to get external information about Flask best practices. You will need to click on the green triangle to accept and let Kiro run its search. You may need to do this several times.
 
-1. In the chat interface take a look at the output of the generation process. It should provide some details as to what Kiro has done when creating the design.md file.
+It should provide some details as to what Kiro has done when creating the design.md file, before inviting you to review the design.md file.
 
 2. If the design.md document is not already loaded into the main editor window, click on the Kiro icon on the activity bar, select your spec in the top left and this should allow you to navigate to the design document.
 
@@ -291,13 +250,35 @@ Click on this to expand the editor so that its full screen.
 - Review the routes/APIs that are created - do they map to our requirements?
 - Look at the design decisions - do they make sense?
 
-5. In this lab we are not going to make any changes to the design, unless you find issues with what has been produced in your design.md. We are going to proceed to the next step in the workflow, implementation. To do this, we can click on the "Move to implementation phase" in the chat interface, or if that is not present, we can type in the chat interface:
+We are going to quickly dive into Correctness Properties in the next lab, so keep the design document open.
+
+![Lab](/images/lab-header-end.png)
+
+---
+
+![Lab](/images/lab-header.png)
+
+One of the big challenges with using AI coding assistants is making sure that the code that we ask them to generate actually gets produced. Correctness is how Kiro helps answer this question, or more specifically, how it produces code that matches your intent.
+
+You can read more about property based testing and how it works in Kiro by [checking out the documentation](https://kiro.dev/docs/specs/correctness/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+
+#### Lab-06
+
+1. Review the chat history - you should find that Kiro has output about formalizing requirements to correctness properties. What are these you might be wondering, lets dive deeper.
+
+2. From the open design.md document, navigate down to the heading "Correctness Properties". You will notice that a number of items listed. Each correctness property that is listed validates a specific requirement. Correctness properties have not been created for everything. A property is a universal statement about how your system should behave. Kiro extracts properties from your EARS-formatted requirements (e.g. "WHEN a user types a task description and presses Enter or clicks an add button, THE Todo_System SHALL create a new Todo_Item and add it to the list", the **SHALL** is key here), and then determines which can be logically tested.
+
+During the execution phase, Kiro will then generate hundreds or thousands of random test cases when you choose to run them. If you look further in the design.md document, you will see that Kiro defines which tools and their configuration (Hypothesis).
+
+3. We are not going to make any changes to the design. We are going to proceed to the next step in the workflow, implementation. To do this, we can click on the "Move to implementation phase" in the chat interface, or if that is not present, we can type in the chat interface:
 
 "Move to implementation phase"
 
 and hit return. This is going to start the next step in the workflow, and Kiro is going to start creating the next artefact, the tasks.md. This might take 2-3 minutes.
 
-----
+![Lab](/images/lab-header-end.png)
+
+---
 
 ![Lab](/images/lab-header.png)
 
@@ -309,7 +290,7 @@ In this lab we will take a look at how Kiro has taken our requirements, together
 
 ![MVP or Prod](/images/kiro-mvp.png)
 
-Kiro provides a way of marking tasks as required or optional. If we were testing Kiro out on an idea, we might only want to create an MVP. What Kiro will do is the review the tasks it has created and mark some of these as optional (typically this will be things like tests)
+Kiro provides a way of marking tasks as required or optional. If we were testing Kiro out on an idea, we might only want to create an MVP. What Kiro will do is the review the tasks it has created and mark some of these as optional (typically this will be things like tests, including the property correctness tests). 
 
 Click on the "Keep optional tasks (faster MVP)" button.
 
@@ -332,9 +313,7 @@ Using source control to version our Kiro project allows us to revert back and ma
 
 ![task started](/images/kiro-task-in-progression.png)
 
-As you do this, pay attention to the chat interface. Whilst Kiro will be generating code, you will still be in the driving seat and Kiro will be prompting you as it asks your permission to run and execute various commands.
-
-5. At some point you will see a message like this appear:
+As you do this, pay attention to the chat interface. Whilst Kiro will be generating code, you will still be in the driving seat and Kiro will be prompting you as it asks your permission to run and execute various commands. At some point you will see a message like this appear:
 
 ![asking permission to run commands](/images/kiro-run-commands.png)
 
@@ -347,23 +326,23 @@ We have four options when Kiro asks us that it needs to do something:
 
 During this lab we are going to click on the "Accept command". So as it appears, click on that icon. You should now see the command run, and the output proceed in the chat interface.
 
-6. After a short period of writing code, Kiro will announce that it has completed the task. It will typically provide a short summary of what it has done, and you will notice that in the main editor, the first task should now show as "Task Completed"
+5. After a short period of writing code, Kiro will announce that it has completed the task. It will typically provide a short summary of what it has done, and you will notice that in the main editor, the first task should now show as "Task Completed"
 
 ![task completed](/images/kiro-task-completed.png)
 
-7. You should notice that for any completed task:
+You should notice that for any completed task:
 
 - All items under the task should show as completed, with the task box changing from [ ] to [x]
 - You will see a "View Changes" link next to the Task Completed text - this will allow you to view a summarized diff of code changes made
 - You will see a "View Execution" link which will take you to the start of the chat history where a given task started, allow you to review the commands that were run and the output
 
-8. Click on the source control icon in the activity bar - you should see a list of all changes made. This will include code but also changes to your spec files.
+6. Click on the source control icon in the activity bar - you should see a list of all changes made. This will include code but also changes to your spec files.
 
 In the message window enter "Task One" and click on Commit, answering Yes when prompted. 
 
 You should now see Task One appear in the graph. Click back on the Kiro icon in the activity bar to get back to the Kiro screen.
 
-9. We started the first task by clicking on the "Start task" link, but we can also do this via the chat interface. In the chat interface, type the following:
+7. We started the first task by clicking on the "Start task" link, but we can also do this via the chat interface. In the chat interface, type the following:
 
 "Start the next task"
 
@@ -375,13 +354,13 @@ You should see Kiro begin the next task. You will follow the same process as for
 
 When finished, repeat the step and add a new commit in source control, naming the commit message after each task.
 
-10. We can also use the chat interface to complete a number of tasks if we think there are a number of related tasks that can be executed together. We do this from the chat interface.
+8. We can also use the chat interface to complete a number of tasks if we think there are a number of related tasks that can be executed together. We do this from the chat interface.
 
 "Start tasks three and then four"
 
 Review the chat interface. You should see now that it starts working on Task 3 and when complete Task 4. Once complete, add another commit (call this one Tasks three and four)
 
-11. You might be wondering what happens if I click on multiple "Start Tasks" links? Kiro has a queue in which it will queue tasks as they are started. In the chat interface, you will see the following icon which will display the current task queue.
+9. You might be wondering what happens if I click on multiple "Start Tasks" links? Kiro has a queue in which it will queue tasks as they are started. In the chat interface, you will see the following icon which will display the current task queue.
 
 ![Kiro task queue icon](/images/kiro-task-queue-icon.png)
 
@@ -389,94 +368,33 @@ If you click on another task before the current task has finished, it will do no
 
 ![view task queue](/images/kiro-task-queued.png)
 
-11. Now work through the remaining tasks. Experiment with using the chat interface, the UI links. Make sure you commit changes to source control as you progress.
+10. Now work through the remaining tasks. Experiment with using the chat interface, the UI links. Make sure you commit changes to source control as you progress.
 
-This will take around 20 minutes to complete, so feel free to grab some refreshments or stretch yours legs whilst you complete the remaining tasks.
-
-![Lab](/images/lab-header-end.png)
-
-
-----
-
-![Lab](/images/lab-header.png)
-
-In previous labs we showed how you can use the chat interface to change (add) the requirements.md and we are now going to do the same thing to add a task to the implementation plan file, tasks.md.
-
-> Note! It is probably best to have added this to our requirements document, but in this lab we want to show you that you can also work and amend the implementation plan as needed.
-
-In the previous lab we Kiro generated code from our specs. How do we now test our application? Kiro may (or may not) have created a README based on the tasks defined in your tasks.md. In most cases it does not create this so we are going to use the chat interface to add a new task to our task list.
-
-#### Lab-08
-
-1. From the chat interface, type the following:
-
-"Add a new task that generates a README file that explains how to start/run this application"
-
-After a few moments, you should see that you now have a new task that has appeared in your task list.
-
-2. Click on the "Start Task" link to complete the task, and keep an eye on the chat interface. If Kiro asks you for help, guide it to completing this task.
-
-You should start see Kiro reading files from the project as it collects information and formulates a README file. This might take around 2-3 minutes to complete.
-
-3. Review the finished README file that is created. Look for how to run the application. From the Terminal section of Kiro, use the command to start the application. It should look something similar to this:
-
-```
-$ cd app
-$ uv run python run.py
- * Serving Flask app 'src'
- * Debug mode: on
-WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on http://127.0.0.1:5000
-Press CTRL+C to quit
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 103-566-284
-```
-
-Open up a web browser, and open up http://127.0.0.1:5000
-
-After testing the application, shut it down (CTRL + C).
-
-4. As with the previous tasks that you completed, use the source control page to commit changes (you can label the commit message "Adding a README file").
-
-Congratulations, you have now completed your first spec driven project. Now lets look at how we make changes or add new features.
+This will take around 10-15 minutes to complete, so feel free to grab some refreshments or stretch yours legs whilst you complete the remaining tasks.
 
 ![Lab](/images/lab-header-end.png)
 
-----
+---
 
 ![Lab](/images/lab-header.png)
 
 It is quite common that we might need to change or add new requirements after we have completed an iteration of the spec driven development workflow. In this lab we are going to show you how this works. We are going to add a new requirement to add a Contact Us page and then work through how Kiro supports this change through the spec driven workflow.
 
-#### Lab-09
+#### Lab-08
 
 1. Make sure any files that are open in the editor are close, and that you have stopped the application. Open up the "requirements.md" file in the main editor.
 
 2. From the chat interface, enter the following prompt:
 
-"Add a new requirement to add a Contact Page"
+"Add a new requirement to this current spec add a Contact Page"
 
-Review the output from the chat interface, and then review the requirements.md file for changes. A new requirement should be added to the end of the requirements.md file. This is an example of what it might look like:
+Review the output from the chat interface, and then review the requirements.md file for changes. It might add a single or several new requirements to the end of the requirements.md file. 
 
-```
-### Requirement 7
+For the purpose of this workshop, we want a much simpler Contact Us page, one that just displays some text and contact details (phone and email), so lets change this directly by editing the requirements.md file. Edit the updates Kiro added to remove the new added requirement or requirements, and then replace it with the following, making sure to update the {Next in Seq} with the next sequential number based on the previous requirements in your requirements.md
 
-**User Story:** As a User, I want to access a contact page, so that I can submit feedback or get support for the application
-
-#### Acceptance Criteria
-
-1. THE Todo Application SHALL provide a contact page accessible from the main interface
-2. THE Todo Application SHALL display a contact form with fields for name, email address, and message
-3. WHEN the User submits the contact form with all required fields completed, THE Todo Application SHALL accept the submission
-4. WHEN the User submits the contact form with missing required fields, THE Todo Application SHALL reject the submission and display validation errors
-5. THE Todo Application SHALL display a confirmation message after successful form submission
-```
-
-3. For the purpose of this workshop, we want a much simpler Contact Us page, one that just displays some text and contact details (phone and email), so lets change this directly by editing the requirements.md file. Use the following, making sure you check the requirement number and adjust it so that it is the next in sequence.
 
 ```
-### Requirement 7
+### Requirement {Next in Seq}
 
 **User Story:** As a User, I want to access a contact page, so that I can find contact information for support
 
@@ -490,17 +408,17 @@ Review the output from the chat interface, and then review the requirements.md f
 
 Save the file after you have made the change.
 
-4. As we have made a change ourselves, we now need to ask Kiro to re-load the requirements via the chat interface.
+3. As we have made a change ourselves, we now need to ask Kiro to re-load the requirements via the chat interface.
 
 "I have updated the requirements.md so please re-load and check"
 
-You should get confirmation and a summary from Kiro.
+Review the output. You should get confirmation of the change (it should identify that this is a simplified requirement) and Kiro should then provide a summary with next steps. **Don't click on the move to design phase link yet**.
 
-5. Click on the "2. Design" link at the top of the editor which will bring up the design document. You will notice that next to this on the right hand side is a "Refine" link.
+4. The next step is to update the design. Depending on what new requirements you make or change, this might require changes to the design document. There are two ways you can do this. You can use the button/link in the chat interface to proceed to the updating the design.
 
-Move your cursor and hover (do not click yet) over the Refine link - you will notice that it says "Refresh your design based on the requirements". As you make changes to your requirements, Kiro needs to potentially update the design. In this particular change, as it is simple it is unlikely that there will be significant changes to the design.
+The other way you can do this is directly from the design document itself. When you click on the "Design" link at the top of the page taking you to the design.md doc, you will notice that there is a link to the right hand side called "Refine". Move your cursor and hover (do not click yet) over the Refine link - you will notice that it says "Refresh your design based on the requirements". 
 
-Click on the Refine link, and watch the output in the chat interface. You should notice that it:
+5. Click on the Refine link, and watch the output in the chat interface. You should notice that it:
 
 - reviews any changes it identifies in the requirements and compares it against the design document
 - provides feedback of changes needed to be made
@@ -512,13 +430,13 @@ Click on the Refine link, and watch the output in the chat interface. You should
 
 Take a few moments to review the diff and see how the design has been updated. To close the diff, just located the X in the main editor and you will close this view.
 
-7. In the chat interface, you should now see that you will be prompted on whether you want to "Move to implementation plan". Click on that link. Kiro will begin working, and after 1-2 minutes, you should now see that your tasks.md file has been updated with new tasks.
+7. In the chat interface, you should now see that you will be prompted on whether you want to "Move to implementation plan". Click on that link. Kiro will begin working, and after 1-2 minutes, you should now see that your tasks.md file has been updated with new tasks. Kiro should also provide a summary explaining which tasks have been added.
 
-You can use the diff icon to quickly view the changes in the tasks.md as you did in the previous steps with the design updates.
+You can use the diff icon to quickly view the changes in the tasks.md as you did in the previous steps with the design updates. Locate the last item in the chat history where it says "Accepted edits to tasks.md" and click on the diff icon. In the main editing panel, you should now see highlighted in green the new updates. After viewing it, close the page in the main editing panel to return back to the implementation plan.
 
 8 You will be prompted whether you want to implement all tasks or just keep optional tasks for MVP, so click on the optional tasks for MVP.
 
-Once that has finished, the output in the chat interface will tell you that you can now being completing the new tasks. As we did before, we can do this via the UI (by clicking on the Start Task) or via the chat interface.
+Once that has finished, the output in the chat interface will provide you a detailed summary. You can now start executing these tasks. As you did in earlier labs, you can do this via the UI (by clicking on the Start Task) or via the chat interface.
 
 "Complete any outstanding tasks"
 
@@ -533,7 +451,77 @@ After a short while, Kiro will begin working through these new tasks. Again, you
 
 ![Lab](/images/lab-header.png)
 
-We can create many specs for a given application. In this next lab we are going to create a completely new spec, building on from the code that Kiro has already generated for us. We are going to add a new feature to export our todo's in csv format.
+In the previous lab we made some changes to add a Contact Us page. What if we decided that this update was not what we needed and we wanted to undo this change. Whilst it might be tempting to ask Kiro to undo the change, there are more effective ways you can achieve this.
+
+At the beginning of this lab you used Kiro's source control integration features to commit changes after tasks where completed. Using source control is one approach you can take. Kiro also provides some capabilities you should be aware of that can help you, through its revert and checkpoint features. In this next lab will explore these.
+
+#### Lab-09
+
+1. In the previous lab we added a new feature called Contact Us, which added new code. We might want to undo some changes, perhaps only certain files. We can use the Undo Change and Revert features from within the chat interface to undo either one or a collection of code changes.
+
+From the chat interface, review the code that was generated by Kiro in the previous lab. After code changes, you will see the following.
+
+![Undo code change](/images/kiro-code-undo.png)
+
+If you click on that link, it will undo that code change. Don't do that now.
+
+You can also revert changes done throughout the entire conversation or task. Once a task has been completed, you will see the following link above the chat interface dialog window.
+
+![Revert code](/images/kiro-code-revert.png)
+
+Be very careful clicking on that link as there is no confirmation or undo option! Again, we will not click on this link yet - this was just to let you see that these options allow you to control code changes and allow you to undo/revert back to a previous state.
+
+
+2. Using Undo and Revert is fine grain and allows you to manage updates to your project files. Kiro provides another feature called Checkpoint. Each time you send a prompt to Kiro (or start a task in the implementation plan), it creates a “checkpoint”. Checkpoints appear as markers in your chat history. You can hit Restore on a checkpoint marker to rewind both your codebase and Kiro’s context back to that point in time. Any changes made to your codebase by Kiro after that checkpoint are reverted, and any context additions (chat interactions) after that point are discarded as well. 
+
+![Checkpoint in Kiro](/images/checkpoint.png)
+
+In the previous lab we added a new feature called Contact Us. This actually is a collection of checkpoints:
+
+* first checkpoint was asking to add a new requirement to our spec
+* second checkpoint was updating of the design document
+* third checkpoint was updating the implementation plan
+* fourth checkpoint was writing the code during the plan execution
+
+Depending on what you want to do, you might want to just revert the code or you might want to revert back to the requirements updates. All you have to do is select the specific checkpoint and Kiro will revert you back to that state (updating its context in the process). Lets see how these work, starting off with reverting just the code and then the requirements.
+
+3. From the chat interface, scroll up and follow the conversation from where you started executing the tasks for the Contact Us page. It might be easier to search for "complete any outstanding tasks" as this is what we used to start those. 
+
+After you have located it you will notice that there is some text above this. On the left you have "Checkpoint" and on the right, a link for "Restore" - it should look like this
+
+Click on the Restore link. It should generate the following (or similar) text.
+
+> Restoring this checkpoint discards all changes made after this point in this session and removes conversation history from context. Imports or references may break if related files changed elsewhere - you'll need to fix those manually.
+
+It should display a list of changed or modified files that are in the scope of this change. You will be asked to confirm whether you want to "Restore Checkpoint". Click on the Confirm link, and after a few seconds you should see all those changes disappear.
+
+Congratulations, you have now reverted back the code based cleanly to where it was before the Contact Us changes where made. Start the application and confirm that you no longer have the Contact Us page.
+
+
+> As a side note. If you have just reverted the code changes, your implementation plan (tasks.md) and the code in your project workspace will now be out of sync (the tasks will be in the todo.md and marked as completed). You can address this either by manually editing the tasks file to uncheck any tasks (removing the "x" so that [x] becomes [ ]) and then saving this file. When you do this, you should notice that the task becomes active again within the implementation plan (tasks.md). The other approach is to use the "Update Tasks" link at the top of the implementation plan (tasks.md). This will then attempt to review and update the implementation plan for you, and after a few minutes Kiro will prompt you for what you want to do.
+> 
+> ![update tasks to refresh](/images/tasks-update.png)
+> 
+> I tend to edit the todo.md plan manually as this saves on tokens/credits
+
+4. Now locate the chat window where you created the new requirement. Kiro will open new tabs for each conversation, so you will find this by looking for a tab called "Add a new requirement".
+
+![revert whole requirement](/images/kiro-checkpoint-requirement.png)
+
+Click on the Restore link, and then confirm when you see the Restore Checkpoint pop up appear above the chat interface dialog box. The current chat conversation will disappear once you have done this and you should now be back at where you started.
+
+5. In the previous examples you used Kiro native features to help you navigate state within your project. You can also use source control. During the earlier labs you initialized git and committed code as tasks were completed.
+
+We are not going to explore this in this workshop, but experiment and see which approach works best for you.
+
+
+![Lab](/images/lab-header-end.png)
+
+---
+
+![Lab](/images/lab-header.png)
+
+You can create many specs for a given application. In this next lab we are going to create a completely new spec, building on from the code that Kiro has already generated for us. We are going to add a new feature to export our todo's in csv format.
 
 #### Lab-10
 
