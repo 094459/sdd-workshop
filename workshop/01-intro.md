@@ -179,6 +179,15 @@ The key difference is that SDD pivots on well defined artifacts (for example, Re
 
 ---
 
+## AI-Driven Development Lifecycle (AI-DLC)
+
+[AI-Driven Development Life Cycle (AI-DLC)](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) holds the promise of unlocking the full potential of AI in software development. By emphasizing AI-led workflows and human-centric decision-making, AI-DLC can deliver velocity and quality. This follows a similar, but different three step workflow. These steps are "Inception" where you determine what to build and why, the "Construction" phase that determines how to build it, and finally the "Operations" phase where you deploy and monitor.
+
+You can start using this workflow within Kiro CLI (and soon Kiro) by checking out the official (GitHub repo here](https://github.com/awslabs/aidlc-workflows). After installing the assets, you can kick off the workflow by starting with a prompt "Use AI-DLC...".
+
+The AI-DLC does not follow Kiro's spec driven approach but implements its own workflow, attempting to re-imagine the broader software development lifecycle. It is worth knowing about this approach although we will not be covering it in this tutorial.
+
+---
 
 ## Integration with existing workflows
 
@@ -201,4 +210,7 @@ Click on [Home](/README.md) to go back to the landing page
 
 
 * [Spec Driven Development: Build what you mean, not what you guess](https://beam.ai/agentic-insights/spec-driven-development-build-what-you-mean-not-what-you-guess)
+
 * [Join the Kiro community online in their Discord server](https://discord.gg/kirodotdev)
+
+* [AI-DLC](https://github.com/awslabs/aidlc-workflows)
