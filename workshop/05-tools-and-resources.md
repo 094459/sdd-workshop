@@ -40,7 +40,8 @@ After you have installed a Power, you will see it appear in the list of availabl
 
 ![Installed Powers](/images/kiro-power-2.png)
 
- There are already many Powers available that you can use, and you can create your own easily. Creating Powers is outside the scope of this workshop, but you can find out more by checking out the [Powers](https://kiro.dev/docs/powers/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) details on the Kiro website.
+ There are already many Powers available that you can use, and you can create your own easily. Creating Powers is outside the scope of this workshop, but you can find out more by checking out the [Powers](https://kiro.dev/docs/powers/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+) details on the Kiro website.
 
 ---
 
@@ -58,7 +59,8 @@ During the labs we forced Kiro to re-index the docs so that we just created. Whi
 
 To force a re-index, use COMMAND + SHIFT + P (Mac) or CTRL + SHIFT + P to access Kiro's command palette and then type in Index to the search bar to view the available indexing options.
 
-You can read more in the official documentation pages, [Codebase Indexing](https://kiro.dev/docs/editor/codebase-indexing/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+You can read more in the official documentation pages, [Codebase Indexing](https://kiro.dev/docs/editor/codebase-indexing/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
 ---
 
@@ -72,17 +74,21 @@ You configure the model via the pull down option in the chat interface. Auto is 
 
 **Credits**
 
-You will notice when you bring up the available models that there is "credit" associated with each model. Your Kiro usage is tied to your service tier you have subscribed to (Kiro free, Kiro Pro, Kiro Pro+, and Kiro Power) therefore this is a consideration you should take when selecting a given model for work. You can dive deeper into this by reading the [Billing page](https://kiro.dev/docs/billing/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el).
+You will notice when you bring up the available models that there is "credit" associated with each model. Your Kiro usage is tied to your service tier you have subscribed to (Kiro free, Kiro Pro, Kiro Pro+, and Kiro Power) therefore this is a consideration you should take when selecting a given model for work. You can dive deeper into this by reading the [Billing page](https://kiro.dev/docs/billing/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+).
 
 Switching to cheaper models or more expensive models based on the tasks you are running is something that you will start to get an intuition for. 
 
-There are some great resources to help you think about which models to use. Start off by reading the section on [Model Selection from the official Kiro docs](https://kiro.dev/docs/chat/model-selection/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) and then read this blog post, [Making your Kiro credits go further](https://kiro.dev/blog/making-credits-go-further/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) to dive deeper.
+There are some great resources to help you think about which models to use. Start off by reading the section on [Model Selection from the official Kiro docs](https://kiro.dev/docs/chat/model-selection/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+) and then read this blog post, [Making your Kiro credits go further](https://kiro.dev/blog/making-credits-go-further/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+) to dive deeper.
 
 ---
 
 ## Keyboard shortcuts
 
-Kiro IDE provides a wide range of keyboard shortcuts to help you work efficiently. You can view these on the official [Kiro documentation pages here](https://kiro.dev/docs/editor/keyboard-shortcuts/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+Kiro IDE provides a wide range of keyboard shortcuts to help you work efficiently. You can view these on the official [Kiro documentation pages here](https://kiro.dev/docs/editor/keyboard-shortcuts/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
 ---
 
@@ -97,7 +103,8 @@ Agent Autonomy can be configured both in settings, but is also present in the ch
 * Autopilot mode is Kiro's autonomous execution mode that allows the agent to make code changes across your codebase and complete complex tasks with minimal intervention. It's a key feature that enables Kiro to work more independently on your behalf.
 * Supervised mode applies each proposed change and then presents it for your review. You can accept, reject, or request further adjustments to any changes made. This approach gives you full visibility into each modification and lets you guide the development process to maintain code quality standards.
 
-To understand how these work in more detail, and when you might want to use one mode over another, read the [Autopilot](https://kiro.dev/docs/chat/autopilot/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) documentation page.
+To understand how these work in more detail, and when you might want to use one mode over another, read the [Autopilot](https://kiro.dev/docs/chat/autopilot/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+) documentation page.
 
 ### Model Context Protocol (MCP)
 
@@ -131,7 +138,8 @@ You can create a file in your project workspace that prevents Kiro from reading 
 
 You create a **".kiroignore"** in the root directory of your project workspace, and then add items as you would a .gitignore file.
 
-Read more about some of the additional configuration options [here](https://kiro.dev/docs/editor/kiroignore/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+Read more about some of the additional configuration options [here](https://kiro.dev/docs/editor/kiroignore/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
 ---
 
@@ -148,7 +156,8 @@ There are two nice features you get with Kiro.
 1. Kiro can automatically generate useful commit messages based on the activity and changes that have been made.
 2. You can include your current git changes in any chat conversation by typing #Git Diff which allows Kiro to see your staged and unstaged changes, making it easier to get contextual help with your modifications. 
 
-Read the official [documentation on Source Control here](https://kiro.dev/docs/editor/source-control/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+Read the official [documentation on Source Control here](https://kiro.dev/docs/editor/source-control/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
 ### Checkpoints
 
@@ -174,4 +183,5 @@ Click on [Home](/README.md) to go back to the landing page
 
 # Additional reading material
 
-* [Official Kiro docs](https://kiro.dev/docs/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+* [Official Kiro docs](https://kiro.dev/docs/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)

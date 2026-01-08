@@ -50,7 +50,8 @@ Developers were talking, practitioners were sharing tools and prototypes, and ke
 
 Spec driven development is an approach that helps developers start with intent, and then move through collecting the right supporting context to generate technical designs and implementation details. It breaks down the implementation into discrete tasks that AI coding assistants can execute, supporting by just the right level of context.
 
-In July, [Kiro](https://kiro.dev?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) was launched, a new IDE that provided an opinionated and native approach for supporting a new workflow when using AI coding assistants - spec driven development.
+In July, [Kiro](https://kiro.dev?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+) was launched, a new IDE that provided an opinionated and native approach for supporting a new workflow when using AI coding assistants - spec driven development.
 
 When you create a "spec", this opinionated workflow will walk you through three phases: Requirements, Design, and then Tasks (Implementation).
 
@@ -181,7 +182,8 @@ The key difference is that SDD pivots on well defined artifacts (for example, Re
 
 ## AI-Driven Development Lifecycle (AI-DLC)
 
-[AI-Driven Development Life Cycle (AI-DLC)](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el) holds the promise of unlocking the full potential of AI in software development. By emphasizing AI-led workflows and human-centric decision-making, AI-DLC can deliver velocity and quality. This follows a similar, but different three step workflow. These steps are "Inception" where you determine what to build and why, the "Construction" phase that determines how to build it, and finally the "Operations" phase where you deploy and monitor.
+[AI-Driven Development Life Cycle (AI-DLC)](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+) holds the promise of unlocking the full potential of AI in software development. By emphasizing AI-led workflows and human-centric decision-making, AI-DLC can deliver velocity and quality. This follows a similar, but different three step workflow. These steps are "Inception" where you determine what to build and why, the "Construction" phase that determines how to build it, and finally the "Operations" phase where you deploy and monitor.
 
 You can start using this workflow within Kiro CLI (and soon Kiro) by checking out the official (GitHub repo here](https://github.com/awslabs/aidlc-workflows). After installing the assets, you can kick off the workflow by starting with a prompt "Use AI-DLC...".
 

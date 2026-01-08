@@ -260,7 +260,8 @@ We are going to quickly dive into Correctness Properties in the next lab, so kee
 
 One of the big challenges with using AI coding assistants is making sure that the code that we ask them to generate actually gets produced. Correctness is how Kiro helps answer this question, or more specifically, how it produces code that matches your intent.
 
-You can read more about property based testing and how it works in Kiro by [checking out the documentation](https://kiro.dev/docs/specs/correctness/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+You can read more about property based testing and how it works in Kiro by [checking out the documentation](https://kiro.dev/docs/specs/correctness/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
 #### Lab-06
 
@@ -658,9 +659,12 @@ Click on [Home](/README.md) to go back to the landing page
 
 # Additional reading material
 
-* [Official Kiro docs](https://kiro.dev/docs/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+* [Official Kiro docs](https://kiro.dev/docs/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
-* [Your first project on Kiro](https://kiro.dev/docs/getting-started/first-project/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+* [Your first project on Kiro](https://kiro.dev/docs/getting-started/first-project/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
-* [Spec best practices](https://kiro.dev/docs/specs/best-practices/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)
+* [Spec best practices](https://kiro.dev/docs/specs/best-practices/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el
+)
 
