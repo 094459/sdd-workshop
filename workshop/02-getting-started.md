@@ -318,30 +318,6 @@ With the requirements completed, we are now ready to move to the next step in th
 
 ---
 
-### Correctness Properties
-
-Within the design.md document, you will notice a section that is titled "Correctness Properties".
-
-> *A property is a characteristic or behavior that should hold true across all valid executions of a system—essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
-
-Kiro will generated a list of properties that will be used to help answer a fundamental question: does the implementation (AI generated code) actually do what was specified (match your intent and requirements)? It uses Property-Based Testing (PBT) to achive this. PBT is a step towards a fundamental shift in how we think about correctness with AI, moving from checking individual examples to validating universal properties across entire input spaces. Traditional unit tests only check specific examples, and whoever writes them—human or AI—is limited by their own biases. By automatically translating natural language specifications into executable properties and generating comprehensive test cases, Kiro creates a powerful feedback loop that helps both AI agents and human developers build more reliable software. This approach not only finds bugs that traditional testing misses, but also maintains a clear, traceable link between your requirements and the tests that validate them.
-
-While PBT cannot guarantee the absence of all bugs, it provides significantly stronger evidence of correctness than example-based testing alone, making it an essential tool for specification-driven development.
-
-**What is a "Property"?**
-
-A property is a universal statement about how your system should behave. Properties express the invariants and contracts that should always be true in your system, regardless of the specific data involved.
-
-> For any set of inputs where certain preconditions hold, some expected behavior is true.
-
-In the Kiro specification world, this maps really well to our EARS requirements:
-
-> "For any authenticated user and any active listing, the user can view that listing." This captures a general rule about system behavior that must hold across all valid scenarios.
-
-[You can dive deeper into this by reading the documentation here](https://kiro.dev/docs/specs/correctness/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el)
-
----
-
 ## Design
 
 Kiro makes this easy for us as it provides visual cues within the IDE. We can start this process by clicking on the "Move to Design phase" button which will appear in the chat interface. You can also start the design process from the chat interface by using a prompt:
@@ -387,6 +363,32 @@ It should provide you a summary of the key changes you have made. We are now rea
 To start this either click on the "Proceed to implementation" button, or from the chat interface type:
 
 "Proceed to Implementation phase"
+
+---
+
+### Correctness Properties
+
+Within the design.md document, you will notice a section that is titled "Correctness Properties".
+
+> *A property is a characteristic or behavior that should hold true across all valid executions of a system—essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+
+![Kiro Correctness Properties](/images/kiro-correctness-properties.png)
+
+Kiro will generated a list of properties that will be used to help answer a fundamental question: does the implementation (AI generated code) actually do what was specified (match your intent and requirements)? It uses Property-Based Testing (PBT) to achive this. PBT is a step towards a fundamental shift in how we think about correctness with AI, moving from checking individual examples to validating universal properties across entire input spaces. Traditional unit tests only check specific examples, and whoever writes them—human or AI—is limited by their own biases. By automatically translating natural language specifications into executable properties and generating comprehensive test cases, Kiro creates a powerful feedback loop that helps both AI agents and human developers build more reliable software. This approach not only finds bugs that traditional testing misses, but also maintains a clear, traceable link between your requirements and the tests that validate them.
+
+While PBT cannot guarantee the absence of all bugs, it provides significantly stronger evidence of correctness than example-based testing alone, making it an essential tool for specification-driven development.
+
+**What is a "Property"?**
+
+A property is a universal statement about how your system should behave. Properties express the invariants and contracts that should always be true in your system, regardless of the specific data involved.
+
+> For any set of inputs where certain preconditions hold, some expected behavior is true.
+
+In the Kiro specification world, this maps really well to our EARS requirements:
+
+> "For any authenticated user and any active listing, the user can view that listing." This captures a general rule about system behavior that must hold across all valid scenarios.
+
+[You can dive deeper into this by reading the documentation here](https://kiro.dev/docs/specs/correctness/?trk=71546b8e-c969-4ead-aa9f-9cd06f6d8610&sc_channel=el)
 
 ---
 
