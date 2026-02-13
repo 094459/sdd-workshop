@@ -33,7 +33,7 @@ A spec has a lifecycle: you create a spec (and work through the three phases of 
 
 Creating a spec starts with intent - what are trying to do? 
 
-We use an initial prompt to bootstrap the spec creation and start the workflow. You will see this in action later when you do the hands on labs. Working with specs about iterating and refining. It is not too important whether your spec is perfect when it is initially created as you will be spending lots of time reviewing and editing them.
+We use an initial prompt to bootstrap the spec creation and start the workflow. You will see this in action later when you do the hands on labs. Working with specs is about iterating and refining. It is not too important whether your spec is perfect when it is initially created as you will be spending lots of time reviewing and editing them.
 
 Specs are a collection of markdown docs, which we will dive into during the hands on labs.
 
