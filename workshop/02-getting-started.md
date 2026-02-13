@@ -51,7 +51,7 @@ Before we dive into the workflow in more detail, we need to talk about Steering 
 
 ## Steering documents
 
-Providing the right context is key to getting the best out of AI coding assistants, and steering documents help provide context. steering documents provide persistent knowledge about your project through markdown files. Instead of explaining your conventions in every chat, steering files ensure your AI coding assistant consistently follows your established patterns, libraries, and standards.
+Providing the right context is key to getting the best out of AI coding assistants, and steering documents help provide context. Steering documents provide persistent knowledge about your project through markdown files. Instead of explaining your conventions in every chat, steering files ensure your AI coding assistant consistently follows your established patterns, libraries, and standards.
 
 **Steering documents and intent have a close relationship**. The steering documents that you create will be aligned to the intent you have.
 
